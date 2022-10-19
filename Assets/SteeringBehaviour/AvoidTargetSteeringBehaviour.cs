@@ -6,7 +6,6 @@ namespace Fyrvall.SteeringBehaviour
     public class AvoidTargetSteeringBehaviour : MonoBehaviour, ISteeringBehaviour
     {
         public Transform Target;
-        public float DesiredDistance = 1f;
         public float AvoidDistance = 1f;
         public float Priority = 1f;
 
@@ -23,12 +22,11 @@ namespace Fyrvall.SteeringBehaviour
             } else {
                 var deltaDistance = (Target.position - transform.position);
                 var distance = deltaDistance.magnitude;
-                if(distance > DesiredDistance) {
+                if(distance > AvoidDistance) {
                     return;
                 }
 
-                Data.Weight = Mathf.Clamp01(1f - (Mathf.Min(distance - AvoidDistance, 0f) / DesiredDistance));
-                Data.Weight = Mathf.Pow(Data.Weight, 2);
+                Data.Weight = AvoidDistance - distance;
                 Data.Movement = -deltaDistance.normalized;
                 Data.Orientation = deltaDistance.normalized;
             }

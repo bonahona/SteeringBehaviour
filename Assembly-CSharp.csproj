@@ -53,13 +53,16 @@
     <UnityVersion>2020.3.0f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\SteeringBehaviour\AvoidFriendliesSteeringBehaviour.cs" />
     <Compile Include="Assets\SteeringBehaviour\MoveToTargetBehaviour.cs" />
     <Compile Include="Assets\SteeringBehaviour\ISteeringBehaviour.cs" />
-    <Compile Include="Assets\SteeringBehaviour\SteeringAgent.cs" />
-    <Compile Include="Assets\SteeringBehaviour\AvoidFriendliesSteeringBehaviour.cs" />
-    <Compile Include="Assets\TestController.cs" />
     <Compile Include="Assets\SteeringBehaviour\SteeringData.cs" />
+    <Compile Include="Assets\SteeringBehaviour\SteeringAgent.cs" />
+    <Compile Include="Assets\TestController.cs" />
     <Compile Include="Assets\SteeringBehaviour\AvoidTargetSteeringBehaviour.cs" />
+    <Compile Include="Assets\SteeringBehaviour\SteeringObstacle.cs" />
+    <Compile Include="Assets\SteeringBehaviour\SteeringHazard.cs" />
+    <Compile Include="Assets\SteeringBehaviour\AvoidHazardSteeringBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
