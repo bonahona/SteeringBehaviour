@@ -11,6 +11,7 @@ namespace Fyrvall.SteeringBehaviour
 
         public List<ISteeringBehaviour> SteeringBehaviours = new List<ISteeringBehaviour>();
 
+        private SteeringData SteeringData;
         private Vector3 CurrentMovementSpeed;
         private Rigidbody Rigidbody;
 
@@ -18,6 +19,7 @@ namespace Fyrvall.SteeringBehaviour
 
         private void Start()
         {
+            SteeringData = new SteeringData();
             Rigidbody = GetComponent<Rigidbody>();
             SteeringBehaviours = GetComponents<MonoBehaviour>()
                 .Where(c => c is ISteeringBehaviour)
@@ -38,7 +40,6 @@ namespace Fyrvall.SteeringBehaviour
 
             foreach(var behaviour in SteeringBehaviours) {
                 behaviour.UpdateBehaviour();
-                behaviour.DebugDraw();
             }
 
             var movementDirection = GetMovementDirection();
@@ -48,14 +49,23 @@ namespace Fyrvall.SteeringBehaviour
 
         private Vector3 GetMovementDirection()
         {
-            var result = Vector3.zero;
+            SteeringData.Reset();
 
             foreach(var behaviour in SteeringBehaviours) {
                 var steeringData = behaviour.GetSteeringData();
-                result += steeringData.Movement * steeringData.Weight * behaviour.GetPriority();
+                
+                for(int i = 0; i < steeringData.Directions.Length; i ++) {
+                    SteeringData.Directions[i] += steeringData.Directions[i];
+                }
             }
-            result.y = 0;
-            return result.normalized;
+
+            for (int i = 0; i < SteeringData.Directions.Length; i++) {
+                Debug.DrawLine(transform.position, transform.position + SteeringData.Directions[i], Color.green);
+            }
+
+
+
+            return SteeringData.Max();
         }
     }
 }
