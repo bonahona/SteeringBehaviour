@@ -14,7 +14,7 @@ namespace Fyrvall.SteeringBehaviour
         private SteeringAgent SteeringAgent;
         private List<SteeringAgent> FriendlyAgents;
 
-        void Start()
+        private void Start()
         {
             SteeringAgent = GetComponent<SteeringAgent>();
             FriendlyAgents = GameObject.FindObjectsOfType<SteeringAgent>().Where(a => a != SteeringAgent).ToList();
