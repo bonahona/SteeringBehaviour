@@ -14,6 +14,8 @@ namespace Fyrvall.SteeringBehaviour
         private Vector3 CurrentMovementSpeed;
         private Rigidbody Rigidbody;
 
+        public bool IsStandStill() => CurrentMovementSpeed.magnitude < 0.001f;
+
         private void Start()
         {
             Rigidbody = GetComponent<Rigidbody>();

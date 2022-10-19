@@ -8,15 +8,18 @@ namespace Fyrvall.SteeringBehaviour
     public class AvoidFriendliesSteeringBehaviour : MonoBehaviour, ISteeringBehaviour
     {
         public float DesiredDistance = 2f;
+        public bool PrioritizeStanding = true;
         public float Priority = 1f;
 
         private List<SteeringAgent> Friendlies = new List<SteeringAgent>();
 
+        private SteeringAgent SteeringAgent;
         private SteeringData Data = new SteeringData();
         private List<SteeringData> FriendlySteering = new List<SteeringData>();
 
         void Start()
         {
+            SteeringAgent = GetComponent<SteeringAgent>();
             Friendlies = GameObject.FindObjectsOfType<SteeringAgent>().ToList();
             foreach(var friendly in Friendlies) {
                 FriendlySteering.Add(new SteeringData());
@@ -41,6 +44,10 @@ namespace Fyrvall.SteeringBehaviour
         {
             Data.Movement = Vector3.zero;
 
+            if(SteeringAgent.IsStandStill()) {
+                return;
+            }
+
             for(int i = 0; i < Friendlies.Count; i ++) {
                 var friendly = Friendlies[i];
                 var friendlySteering = FriendlySteering[i];
@@ -50,7 +57,7 @@ namespace Fyrvall.SteeringBehaviour
                 }
 
                 var deltaDistance = friendly.transform.position - transform.position;
-                var distance = deltaDistance.sqrMagnitude;
+                var distance = deltaDistance.magnitude;
 
                 if(distance >= DesiredDistance) {
                     friendlySteering.Weight = 0;

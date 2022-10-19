@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b507d6c5442bc4390a2365dc690db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 6
+  MovementSpeed: 5
 --- !u!114 &8896937953647118370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  DesiredDistance: 5
+  DesiredDistance: 3
   Priority: 1
 --- !u!114 &8896937953647118371
 MonoBehaviour:
@@ -157,7 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccab3e8e266179a4fa59c6dded1836a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DesiredDistance: 3
+  DesiredDistance: 2
+  PrioritizeStanding: 1
   Priority: 2
 --- !u!114 &5704533769807419729
 MonoBehaviour:
@@ -172,6 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  DesiredDistance: 3
-  AvoidDistance: 2
+  DesiredDistance: 2
+  AvoidDistance: 1
   Priority: 2

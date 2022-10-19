@@ -22,7 +22,7 @@ namespace Fyrvall.SteeringBehaviour
                 return;
             } else {
                 var deltaDistance = (Target.position - transform.position);
-                var distance = deltaDistance.sqrMagnitude;
+                var distance = deltaDistance.magnitude;
                 if(distance > DesiredDistance) {
                     return;
                 }
