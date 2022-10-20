@@ -2,51 +2,71 @@ using UnityEngine;
 
 namespace Fyrvall.SteeringBehaviour
 {
+    public class DirectionData
+    {
+        public Vector3 Direction;
+        public float Weight;
+
+        public Vector3 CappedDirection()
+        {
+            if(Weight < 1f) {
+                return Direction * Weight;
+            } else {
+                return Direction;
+            }
+        }
+
+        public override string ToString() => $"{Direction} - {Weight}";
+    }
+
     public class SteeringData
     {
-        public Vector3[] Directions = new Vector3[SteeringUtils.SteeringDirectionCount];
+        public DirectionData[] Directions;
+
+        public SteeringData()
+        {
+            Directions = new DirectionData[SteeringUtils.SteeringDirectionCount];
+            for (int i = 0; i < SteeringUtils.SteeringDirectionCount; i++) { 
+                Directions[i] = new DirectionData {  Direction = SteeringUtils.SteeringDirection[i], Weight = 0 };
+            }
+        }
 
         public void Reset()
         {
-            for(int i = 0; i < Directions.Length; i ++) {
-                Directions[i] = Vector3.zero;
+            foreach(var direction in Directions) {
+                direction.Weight = 0;
             }
         }
 
-        public Vector3 Max()
+        public DirectionData Max()
         {
-            var result = Vector3.zero;
+            var resultIndex = 0;
 
             for(int i = 0; i < Directions.Length; i ++) {
-                if(Directions[i].sqrMagnitude > result.sqrMagnitude) {
-                    result = Directions[i];
+                if(Directions[i].Weight > Directions[resultIndex].Weight) {
+                    resultIndex = i;
                 }
             }
 
-            return result;
+            return Directions[resultIndex];
         }
 
-        public void FromDirection(Vector3 direction, float weight = 1f)
+        public void FromDirection(Vector3 direction, float backwardbackwardsFactor = 1f, float weight = 1f)
         {
             for (int i = 0; i < Directions.Length; i++) {
                 var dot = Vector3.Dot(SteeringUtils.SteeringDirection[i], direction);
-                Directions[i] = Mathf.Clamp01(dot) * SteeringUtils.SteeringDirection[i] * weight;
+                if(dot < 0) {
+                    dot *= backwardbackwardsFactor;
+                }
+
+                Directions[i].Weight = dot * weight;
             }
         }
 
         public void Apply(SteeringData other)
         {
             for (int i = 0; i < Directions.Length; i++) {
-                Directions[i] += other.Directions[i];
-            }
-        }
-
-        public void Clamp01()
-        {
-            for (int i = 0; i < Directions.Length; i++) {
-                if (Directions[i].sqrMagnitude > 1) {
-                    Directions[i].Normalize();
-                }
+                Directions[i].Weight += other.Directions[i].Weight;
             }
         }
     }

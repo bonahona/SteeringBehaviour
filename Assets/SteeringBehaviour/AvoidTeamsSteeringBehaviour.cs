@@ -5,9 +5,12 @@ using UnityEngine;
 namespace Fyrvall.SteeringBehaviour
 {
     [RequireComponent(typeof(SteeringAgent))]
-    public class AvoidFriendlySteeringBehaviour : MonoBehaviour, ISteeringBehaviour
+    public class AvoidTeamsSteeringBehaviour : MonoBehaviour, ISteeringBehaviour
     {
         public float DesiredDistance = 1f;
+
+        [Range(0f, 5f)]
+        public float Priority = 1f;
 
         private SteeringData SteeringData = new SteeringData();
         private SteeringData SteeringDataCache = new SteeringData();
@@ -17,7 +20,9 @@ namespace Fyrvall.SteeringBehaviour
         private void Start()
         {
             SteeringAgent = GetComponent<SteeringAgent>();
-            FriendlyAgents = GameObject.FindObjectsOfType<SteeringAgent>().Where(a => a != SteeringAgent).ToList();
+            FriendlyAgents = GameObject.FindObjectsOfType<SteeringAgent>()
+                .Where(a => a != SteeringAgent)
+                .ToList();
         }
 
 
@@ -34,7 +39,7 @@ namespace Fyrvall.SteeringBehaviour
                     continue;
                 }
 
-                SteeringDataCache.FromDirection(-delta.normalized, 1f - (delta.magnitude / DesiredDistance));
+                SteeringDataCache.FromDirection(delta.normalized, 1f, (1f - (delta.magnitude / DesiredDistance) * Priority));
                 SteeringData.Apply(SteeringDataCache);
             }
         }

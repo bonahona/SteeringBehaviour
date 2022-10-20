@@ -4,22 +4,23 @@ namespace Fyrvall.SteeringBehaviour
 {
     public enum SteeringDirectionType : byte
     {
-        North = 0,
-        NorthNorthEast = 1,
-        NorthEast = 2,
-        EastNorthEast = 3,
-        East = 4,
-        EastSouthEast = 5,
-        SouthEast = 6,
-        SouthSouthEast = 7,
-        South = 8,
-        SouthSouthWest = 9,
-        SouthWest = 10,
-        WestSouthWest = 11,
-        West = 12,
-        WestNorthWest = 13,
-        NorthWest = 14,
-        NorthNorthWest = 15
+        None = 0,
+        North = 1,
+        NorthNorthEast = 2,
+        NorthEast = 3,
+        EastNorthEast = 4,
+        East = 5,
+        EastSouthEast = 6,
+        SouthEast = 7,
+        SouthSouthEast = 8,
+        South = 9,
+        SouthSouthWest = 10,
+        SouthWest = 11,
+        WestSouthWest = 12,
+        West = 13,
+        WestNorthWest = 14,
+        NorthWest = 15,
+        NorthNorthWest = 16
     }
 
     public static class SteeringUtils
@@ -31,6 +32,7 @@ namespace Fyrvall.SteeringBehaviour
         static SteeringUtils()
         {
             SteeringDirection = new Vector3[] {
+                Vector3.zero,
                 Vector3.forward,
                 (Vector3.forward + Vector3.forward + Vector3.right).normalized,
                 (Vector3.forward + Vector3.right).normalized,

@@ -7,11 +7,16 @@ namespace Fyrvall.SteeringBehaviour
     [RequireComponent(typeof(Rigidbody))]
     public class SteeringAgent : MonoBehaviour
     {
+        public bool UseAgent = true;        // Reserved for players
         public float MovementSpeed = 2;
 
         public List<ISteeringBehaviour> SteeringBehaviours = new List<ISteeringBehaviour>();
 
-        private SteeringData SteeringData;
+        [System.NonSerialized]
+        public SteeringData CurrentSteeringData;
+        [System.NonSerialized]
+        public SteeringData TargetSteeringData;
+
         private Vector3 CurrentMovementSpeed;
         private Rigidbody Rigidbody;
 
@@ -19,7 +24,9 @@ namespace Fyrvall.SteeringBehaviour
 
         private void Start()
         {
-            SteeringData = new SteeringData();
+            CurrentSteeringData = new SteeringData();
+            TargetSteeringData = new SteeringData();
+
             Rigidbody = GetComponent<Rigidbody>();
             SteeringBehaviours = GetComponents<MonoBehaviour>()
                 .Where(c => c is ISteeringBehaviour)
@@ -29,7 +36,12 @@ namespace Fyrvall.SteeringBehaviour
 
         private void Update()
         {
+            if(!UseAgent) {
+                return;
+            }
+
             UpdateSteeringBehaviour();
+            MoveAgent();
         }
 
         private void UpdateSteeringBehaviour()
@@ -42,30 +54,41 @@ namespace Fyrvall.SteeringBehaviour
                 behaviour.UpdateBehaviour();
             }
 
+            UpdateTargetDirections();
+            UpdateCurrentDirections();
+        }
+
+        private void MoveAgent()
+        {
             var movementDirection = GetMovementDirection();
+
             CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, movementDirection * MovementSpeed, 0.1f);
             Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
         }
 
         private Vector3 GetMovementDirection()
         {
-            SteeringData.Reset();
+            return CurrentSteeringData.Max().CappedDirection();
+        }
 
-            foreach(var behaviour in SteeringBehaviours) {
+        private void UpdateTargetDirections()
+        {
+            TargetSteeringData.Reset();
+
+            foreach (var behaviour in SteeringBehaviours) {
                 var steeringData = behaviour.GetSteeringData();
-                
-                for(int i = 0; i < steeringData.Directions.Length; i ++) {
-                    SteeringData.Directions[i] += steeringData.Directions[i];
+
+                for (int i = 0; i < steeringData.Directions.Length; i++) {
+                    TargetSteeringData.Directions[i].Weight += steeringData.Directions[i].Weight;
                 }
             }
+        }
 
-            for (int i = 0; i < SteeringData.Directions.Length; i++) {
-                Debug.DrawLine(transform.position, transform.position + SteeringData.Directions[i], Color.green);
+        private void UpdateCurrentDirections()
+        {
+            for (int i = 0; i < CurrentSteeringData.Directions.Length; i++) {
+                CurrentSteeringData.Directions[i] = TargetSteeringData.Directions[i];
             }
-
-
-
-            return SteeringData.Max();
         }
     }
 }

@@ -6,22 +6,34 @@ namespace Fyrvall.SteeringBehaviour
     public class MoveToTargetBehaviour : MonoBehaviour, ISteeringBehaviour
     {
         public Transform Target;
+        public float ClosestDistance = 1f;
         public float DesiredDistance = 1f;
+
+        [Range(0f, 1f)]
+        public float BackwardsFallof = 0f;
+
+        [Range (0f, 5f)]
+        public float Priority = 1f;
 
         private SteeringData SteeringData = new SteeringData();
 
         public void UpdateBehaviour()
         {
             SteeringData.Reset();
-            if (Target != null) {
-                var delta = (Target.position - transform.position);
-                
-                if(delta.magnitude < DesiredDistance) {
-                    return;
-                }
+            if (Target == null) {
+                return;
+            }
 
-                var direction = delta.normalized;
-                SteeringData.FromDirection(direction);
+            var delta = (Target.position - transform.position);
+            var distance = delta.magnitude;
+            if (distance < ClosestDistance) {
+                var weight = delta.magnitude / ClosestDistance;
+                SteeringData.FromDirection(-delta.normalized, BackwardsFallof, weight);
+            } else if (distance < DesiredDistance) {
+                var weight = (delta.magnitude - ClosestDistance) / (DesiredDistance - ClosestDistance);
+                SteeringData.FromDirection(delta.normalized, BackwardsFallof, weight);
+            } else {
+                SteeringData.FromDirection(delta.normalized * Priority, BackwardsFallof);
             }
         }
 
