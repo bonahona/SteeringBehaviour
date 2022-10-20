@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Fyrvall.SteeringBehaviour
 {
+    [System.Serializable]
     public class DirectionData
     {
         public Vector3 Direction;
@@ -19,8 +20,10 @@ namespace Fyrvall.SteeringBehaviour
         public override string ToString() => $"{Direction} - {Weight}";
     }
 
+    [System.Serializable]
     public class SteeringData
     {
+        public int Index;
         public DirectionData[] Directions;
 
         public SteeringData()

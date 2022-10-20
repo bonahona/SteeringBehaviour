@@ -12,10 +12,14 @@ namespace Fyrvall.SteeringBehaviour
         [Range(0f, 5f)]
         public float Priority = 1f;
 
-        private SteeringData SteeringData = new SteeringData();
-        private SteeringData SteeringDataCache = new SteeringData();
-        private SteeringAgent SteeringAgent;
-        private List<SteeringAgent> FriendlyAgents;
+        [HideInInspector]
+        public SteeringData SteeringData = new SteeringData();
+        [HideInInspector]
+        public SteeringData SteeringDataCache = new SteeringData();
+        [HideInInspector]
+        public SteeringAgent SteeringAgent;
+        [HideInInspector]
+        public List<SteeringAgent> FriendlyAgents;
 
         private void Start()
         {
@@ -39,9 +43,12 @@ namespace Fyrvall.SteeringBehaviour
                     continue;
                 }
 
-                SteeringDataCache.FromDirection(delta.normalized, 1f, (1f - (delta.magnitude / DesiredDistance) * Priority));
+                var weight = 1f - (delta.magnitude / DesiredDistance);
+                SteeringDataCache.FromDirection(-delta.normalized, 1f, weight * Priority);
                 SteeringData.Apply(SteeringDataCache);
             }
         }
+
+        public int Index() => 1;
     }
 }

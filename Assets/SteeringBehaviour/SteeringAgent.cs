@@ -4,21 +4,22 @@ using System.Linq;
 
 namespace Fyrvall.SteeringBehaviour
 {
-    [RequireComponent(typeof(Rigidbody))]
     public class SteeringAgent : MonoBehaviour
     {
         public bool UseAgent = true;        // Reserved for players
         public float MovementSpeed = 2;
 
+        [Range(0f, 5f)]
+        public float ClampMovement = 0.1f;
+
         public List<ISteeringBehaviour> SteeringBehaviours = new List<ISteeringBehaviour>();
 
-        [System.NonSerialized]
+        [HideInInspector]
         public SteeringData CurrentSteeringData;
-        [System.NonSerialized]
+        [HideInInspector]
         public SteeringData TargetSteeringData;
-
-        private Vector3 CurrentMovementSpeed;
-        private Rigidbody Rigidbody;
+        [HideInInspector]
+        public Vector3 CurrentMovementSpeed;
 
         public bool IsStandStill() => CurrentMovementSpeed.magnitude < 0.001f;
 
@@ -27,7 +28,6 @@ namespace Fyrvall.SteeringBehaviour
             CurrentSteeringData = new SteeringData();
             TargetSteeringData = new SteeringData();
 
-            Rigidbody = GetComponent<Rigidbody>();
             SteeringBehaviours = GetComponents<MonoBehaviour>()
                 .Where(c => c is ISteeringBehaviour)
                 .Cast<ISteeringBehaviour>()
@@ -62,8 +62,12 @@ namespace Fyrvall.SteeringBehaviour
         {
             var movementDirection = GetMovementDirection();
 
+            if(movementDirection.sqrMagnitude < (ClampMovement * ClampMovement)) {
+                movementDirection = Vector3.zero;
+            }
+
             CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, movementDirection * MovementSpeed, 0.1f);
-            Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
+            transform.Translate(CurrentMovementSpeed * Time.deltaTime);
         }
 
         private Vector3 GetMovementDirection()
@@ -88,6 +92,23 @@ namespace Fyrvall.SteeringBehaviour
         {
             for (int i = 0; i < CurrentSteeringData.Directions.Length; i++) {
                 CurrentSteeringData.Directions[i] = TargetSteeringData.Directions[i];
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (!Application.isPlaying) {
+                return;
+            }
+
+            foreach (var direction in CurrentSteeringData.Directions) {
+                var startPosition = transform.position + direction.Direction * 0.5f;
+
+                if (direction.Weight > 0) {
+                    Debug.DrawLine(startPosition, startPosition + direction.Direction * direction.Weight, Color.Lerp(Color.yellow, Color.green, direction.Weight));
+                } else {
+                    Debug.DrawLine(startPosition, startPosition + direction.Direction * Mathf.Abs(direction.Weight), Color.red);
+                }
             }
         }
     }

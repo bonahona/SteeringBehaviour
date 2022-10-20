@@ -1,19 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class TestController : MonoBehaviour
 {
     public float MovementSpeed = 10f;
 
     private Vector3 CurrentMovementSpeed;
-    private Rigidbody Rigidbody;
-
     private float TargetTimeScale = 1f;
-
-    private void Start()
-    {
-        Rigidbody = GetComponent<Rigidbody>();    
-    }
 
     private void Update()
     {
@@ -46,7 +38,7 @@ public class TestController : MonoBehaviour
         }
 
         CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, movementDirection * MovementSpeed, 0.1f);
-        Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
+        transform.Translate(CurrentMovementSpeed * Time.deltaTime);
 
     }
 }

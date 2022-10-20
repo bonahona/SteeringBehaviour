@@ -15,7 +15,8 @@ namespace Fyrvall.SteeringBehaviour
         [Range (0f, 5f)]
         public float Priority = 1f;
 
-        private SteeringData SteeringData = new SteeringData();
+        [HideInInspector]
+        public SteeringData SteeringData = new SteeringData();
 
         public void UpdateBehaviour()
         {
@@ -27,7 +28,7 @@ namespace Fyrvall.SteeringBehaviour
             var delta = (Target.position - transform.position);
             var distance = delta.magnitude;
             if (distance < ClosestDistance) {
-                var weight = delta.magnitude / ClosestDistance;
+                var weight = 1f - delta.magnitude / ClosestDistance;
                 SteeringData.FromDirection(-delta.normalized, BackwardsFallof, weight);
             } else if (distance < DesiredDistance) {
                 var weight = (delta.magnitude - ClosestDistance) / (DesiredDistance - ClosestDistance);
