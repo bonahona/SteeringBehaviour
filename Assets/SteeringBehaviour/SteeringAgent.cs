@@ -21,7 +21,7 @@ namespace Fyrvall.SteeringBehaviour
         [HideInInspector]
         public Vector3 CurrentMovementSpeed;
 
-        public bool IsStandStill() => CurrentMovementSpeed.magnitude < 0.001f;
+        public bool IsStandStill() => CurrentMovementSpeed.magnitude < (ClampMovement * ClampMovement);
 
         private void Start()
         {
