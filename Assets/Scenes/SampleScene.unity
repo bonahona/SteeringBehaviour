@@ -224,13 +224,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -297,13 +331,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -370,13 +438,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -526,13 +628,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -761,13 +897,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -1178,13 +1348,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -1334,13 +1538,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -1490,13 +1728,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -1646,13 +1918,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -1802,13 +2108,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -2062,13 +2402,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -2135,13 +2509,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -2291,13 +2699,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -2447,13 +2889,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -2520,13 +2996,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -2842,13 +3352,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -3164,13 +3708,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -3320,13 +3898,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -3559,13 +4171,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -3808,13 +4454,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -3964,13 +4644,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -4037,13 +4751,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -4359,13 +5107,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -4594,13 +5376,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -4750,13 +5566,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -4906,13 +5756,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -5062,13 +5946,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -5218,13 +6136,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -5370,13 +6322,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -5526,13 +6512,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -5682,13 +6702,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -5838,13 +6892,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -5994,13 +7082,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -6067,13 +7189,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -6140,13 +7296,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -6213,13 +7403,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -6369,13 +7593,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -6442,13 +7700,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -6598,13 +7890,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -6754,13 +8080,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -7076,13 +8436,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -7315,13 +8709,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -7388,13 +8816,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -7544,13 +9006,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -7700,13 +9196,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -7773,13 +9303,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -7929,13 +9493,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -8085,13 +9683,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -8241,13 +9873,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -8314,13 +9980,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -8387,13 +10087,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -8460,13 +10194,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -8616,13 +10384,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -8772,13 +10574,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -8928,13 +10764,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -9084,13 +10954,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}
@@ -9157,13 +11061,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 5274421802968185241}
-  ClosestDistance: 2
-  DesiredDistance: 5
+  ClosestDistance: 4
+  DesiredDistance: 6
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 3
   BackwardsFallof: 0.25
   Priority: 1
   SteeringData:
-    Index: 0
-    Directions:
+    Movement:
+    - Direction: {x: 0, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: 1}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: 1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: 0, y: 0, z: -1}
+      Weight: 0
+    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
+      Weight: 0
+    - Direction: {x: -1, y: 0, z: 0}
+      Weight: 0
+    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
+      Weight: 0
+    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
+      Weight: 0
+    Orientation:
     - Direction: {x: 0, y: 0, z: 0}
       Weight: 0
     - Direction: {x: 0, y: 0, z: 1}

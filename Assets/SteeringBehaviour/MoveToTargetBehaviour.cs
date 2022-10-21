@@ -9,6 +9,12 @@ namespace Fyrvall.SteeringBehaviour
         public float ClosestDistance = 1f;
         public float DesiredDistance = 1f;
 
+        [Range(0, 5f)]
+        public float ToDesiredDistancePriority = 1f;
+
+        [Range(0, 5f)]
+        public float FromClosestDistancePriority = 1f;
+
         [Range(0f, 1f)]
         public float BackwardsFallof = 0f;
 
@@ -29,12 +35,15 @@ namespace Fyrvall.SteeringBehaviour
             var distance = delta.magnitude;
             if (distance < ClosestDistance) {
                 var weight = 1f - delta.magnitude / ClosestDistance;
-                SteeringData.FromDirection(-delta.normalized, BackwardsFallof, weight);
+                SteeringData.MovementFromDirection(-delta.normalized, BackwardsFallof, weight * Priority * FromClosestDistancePriority);
+                SteeringData.OrientationFromDirection(delta.normalized, BackwardsFallof, weight * Priority * FromClosestDistancePriority);
             } else if (distance < DesiredDistance) {
                 var weight = (delta.magnitude - ClosestDistance) / (DesiredDistance - ClosestDistance);
-                SteeringData.FromDirection(delta.normalized, BackwardsFallof, weight);
+                SteeringData.MovementFromDirection(delta.normalized, BackwardsFallof, weight * Priority);
+                SteeringData.OrientationFromDirection(delta.normalized, BackwardsFallof, weight * Priority);
             } else {
-                SteeringData.FromDirection(delta.normalized * Priority, BackwardsFallof);
+                SteeringData.MovementFromDirection(delta.normalized, BackwardsFallof, Priority * ToDesiredDistancePriority);
+                SteeringData.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority * ToDesiredDistancePriority);
             }
         }
 

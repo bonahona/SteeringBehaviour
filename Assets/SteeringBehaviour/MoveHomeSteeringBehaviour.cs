@@ -29,7 +29,7 @@ namespace Fyrvall.SteeringBehaviour
             SteeringData.Reset();
 
             var delta = (StartPosition - transform.position);
-            SteeringData.FromDirection(delta.normalized * Priority, 1f);
+            SteeringData.MovementFromDirection(delta.normalized * Priority, 1f);
         }
     }
 }

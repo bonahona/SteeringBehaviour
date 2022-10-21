@@ -20,6 +20,8 @@ namespace Fyrvall.SteeringBehaviour
         public SteeringData TargetSteeringData;
         [HideInInspector]
         public Vector3 CurrentMovementSpeed;
+        [HideInInspector]
+        public Vector3 CurrentOritation;
 
         public bool IsStandStill() => CurrentMovementSpeed.magnitude < (ClampMovement * ClampMovement);
 
@@ -60,19 +62,37 @@ namespace Fyrvall.SteeringBehaviour
 
         private void MoveAgent()
         {
+            UpdateMovement();
+            UpdateOritation();
+        }
+
+        private void UpdateMovement()
+        {
             var movementDirection = GetMovementDirection();
 
-            if(movementDirection.sqrMagnitude < (ClampMovement * ClampMovement)) {
+            if (movementDirection.sqrMagnitude < (ClampMovement * ClampMovement)) {
                 movementDirection = Vector3.zero;
             }
 
             CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, movementDirection * MovementSpeed, 0.1f);
-            transform.Translate(CurrentMovementSpeed * Time.deltaTime);
+            transform.position += (CurrentMovementSpeed * Time.deltaTime);
+        }
+
+        private void UpdateOritation()
+        {
+            var orientationDirection = GetOrientationDirection();
+            CurrentOritation = Vector3.Slerp(CurrentOritation, orientationDirection, 0.1f);
+            transform.rotation = Quaternion.LookRotation(CurrentOritation);
         }
 
         private Vector3 GetMovementDirection()
         {
-            return CurrentSteeringData.Max().CappedDirection();
+            return CurrentSteeringData.MovementMax().CappedMovementDirection();
+        }
+
+        private Vector3 GetOrientationDirection()
+        {
+            return CurrentSteeringData.OrientationMax().CappedOrientationDirection();
         }
 
         private void UpdateTargetDirections()
@@ -83,7 +103,8 @@ namespace Fyrvall.SteeringBehaviour
                 var steeringData = behaviour.GetSteeringData();
 
                 for (int i = 0; i < steeringData.Directions.Length; i++) {
-                    TargetSteeringData.Directions[i].Weight += steeringData.Directions[i].Weight;
+                    TargetSteeringData.Directions[i].MovementWeight += steeringData.Directions[i].MovementWeight;
+                    TargetSteeringData.Directions[i].OrientationWeight += steeringData.Directions[i].OrientationWeight;
                 }
             }
         }
@@ -104,10 +125,10 @@ namespace Fyrvall.SteeringBehaviour
             foreach (var direction in CurrentSteeringData.Directions) {
                 var startPosition = transform.position + direction.Direction * 0.5f;
 
-                if (direction.Weight > 0) {
-                    Debug.DrawLine(startPosition, startPosition + direction.Direction * direction.Weight, Color.Lerp(Color.yellow, Color.green, direction.Weight));
+                if (direction.MovementWeight > 0) {
+                    Debug.DrawLine(startPosition, startPosition + direction.Direction * direction.MovementWeight, Color.Lerp(Color.yellow, Color.green, direction.MovementWeight));
                 } else {
-                    Debug.DrawLine(startPosition, startPosition + direction.Direction * Mathf.Abs(direction.Weight), Color.red);
+                    Debug.DrawLine(startPosition, startPosition + direction.Direction * Mathf.Abs(direction.MovementWeight), Color.red);
                 }
             }
         }
