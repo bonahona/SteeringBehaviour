@@ -61,6 +61,7 @@
     <Compile Include="Assets\SteeringBehaviour\SteeringAgent.cs" />
     <Compile Include="Assets\TestController.cs" />
     <Compile Include="Assets\SteeringBehaviour\MoveHomeSteeringBehaviour.cs" />
+    <Compile Include="Assets\SteeringBehaviour\CircleTargetSteeringBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
