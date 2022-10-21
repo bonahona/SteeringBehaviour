@@ -107,6 +107,8 @@ namespace Fyrvall.SteeringBehaviour
                     TargetSteeringData.Directions[i].OrientationWeight += steeringData.Directions[i].OrientationWeight;
                 }
             }
+
+            TargetSteeringData.BalanceMovement();
         }
 
         private void UpdateCurrentDirections()

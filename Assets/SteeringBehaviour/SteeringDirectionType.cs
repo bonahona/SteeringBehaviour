@@ -25,9 +25,10 @@ namespace Fyrvall.SteeringBehaviour
 
     public static class SteeringUtils
     {
-        public const int SteeringDirectionCount = 16;
+        public const int SteeringDirectionCount = 17;
 
         public static readonly Vector3[] SteeringDirection;
+        public static int[] OppositeIndex;
 
         static SteeringUtils()
         {
@@ -49,6 +50,26 @@ namespace Fyrvall.SteeringBehaviour
                 (Vector3.forward + Vector3.left + Vector3.left).normalized,
                 (Vector3.forward + Vector3.left).normalized,
                 (Vector3.forward + Vector3.forward + Vector3.left).normalized
+            };
+
+            OppositeIndex = new int[] {
+                0,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
             };
         }
     }

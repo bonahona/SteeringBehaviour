@@ -9,6 +9,8 @@ namespace Fyrvall.SteeringBehaviour
         public float MovementWeight;
         public float OrientationWeight;
 
+        public float MovementWeightCache;
+
         public Vector3 CappedMovementDirection()
         {
             if(MovementWeight < 1f) {
@@ -111,6 +113,17 @@ namespace Fyrvall.SteeringBehaviour
         {
             for (int i = 0; i < Directions.Length; i++) {
                 Directions[i].MovementWeight += other.Directions[i].MovementWeight;
+            }
+        }
+
+        public void BalanceMovement()
+        {
+            for(int i = 0; i < Directions.Length; i ++) {
+                Directions[i].MovementWeightCache = Mathf.Max(Directions[i].MovementWeight - Directions[SteeringUtils.OppositeIndex[i]].MovementWeight, 0);
+            }
+
+            for (int i = 0; i < Directions.Length; i++) {
+                Directions[i].MovementWeight = Directions[i].MovementWeightCache;
             }
         }
     }
