@@ -56,15 +56,15 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Steering\MoveToTargetBehaviour.cs" />
-    <Compile Include="Assets\Steering\ISteeringBehaviour.cs" />
-    <Compile Include="Assets\Steering\SteeringData.cs" />
-    <Compile Include="Assets\Steering\SteeringDirectionType.cs" />
-    <Compile Include="Assets\Steering\SteeringAgent.cs" />
+    <Compile Include="Assets\Steering\Scripts\MoveToTargetBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\ISteeringBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\SteeringData.cs" />
+    <Compile Include="Assets\Steering\Scripts\SteeringDirectionType.cs" />
+    <Compile Include="Assets\Steering\Scripts\SteeringAgent.cs" />
     <Compile Include="Assets\TestController.cs" />
-    <Compile Include="Assets\Steering\CircleTargetSteeringBehaviour.cs" />
-    <Compile Include="Assets\Steering\AvoidTeamsSteeringBehaviour.cs" />
-    <Compile Include="Assets\Steering\MoveHomeSteeringBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\CircleTargetSteeringBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\AvoidTeamsSteeringBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\MoveHomeSteeringBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

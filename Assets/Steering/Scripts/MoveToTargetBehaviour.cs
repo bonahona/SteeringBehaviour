@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Fyrvall.SteeringBehaviour
 {
-    [CreateAssetMenu(fileName = "MoveToTargetBehaviour", menuName = "Steering/Circle Target")]
+    [CreateAssetMenu(fileName = "MoveToTargetBehaviour", menuName = "Steering/Move to Target")]
     public class MoveToTargetBehaviour: SteeringBehaviourBase
     {
         public float ClosestDistance = 1f;
