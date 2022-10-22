@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.387, z: 0.454}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2767115137878917081}
   m_RootOrder: 0
@@ -52,6 +53,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -109,8 +111,6 @@ GameObject:
   - component: {fileID: 2767115137878917082}
   - component: {fileID: 2767115137878917085}
   - component: {fileID: 2767115137878917084}
-  - component: {fileID: 2767115137878917087}
-  - component: {fileID: 177171234}
   m_Layer: 0
   m_Name: AgentMelee01
   m_TagString: Untagged
@@ -128,6 +128,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: -9.999784}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8201578414601444459}
   m_Father: {fileID: 0}
@@ -152,6 +153,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -227,290 +229,211 @@ MonoBehaviour:
   UseAgent: 1
   MovementSpeed: 10
   ClampMovement: 0.1
+  SteeringBehaviours: []
+  Target: {fileID: 0}
   CurrentSteeringData:
     Directions:
     - Direction: {x: 0, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0, y: 0, z: 1}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 1, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0, y: 0, z: -1}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -1, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
   TargetSteeringData:
     Directions:
     - Direction: {x: 0, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0, y: 0, z: 1}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 1, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0, y: 0, z: -1}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -1, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
-  CurrentMovementSpeed: {x: 0, y: 0, z: 0}
-  CurrentOritation: {x: 0, y: 0, z: 0}
---- !u!114 &2767115137878917087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2767115137878917025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6bf2ed3057543f4e906858000cd8357, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DesiredDistance: 2
-  Priority: 2
-  SteeringData:
-    Directions:
-    - Direction: {x: 0, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0, y: 0, z: 1}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 1, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0, y: 0, z: -1}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -1, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
+      MovementWeightCache: 0
   SteeringDataCache:
     Directions:
     - Direction: {x: 0, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0, y: 0, z: 1}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 1, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: 0, y: 0, z: -1}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -1, y: 0, z: 0}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
       MovementWeight: 0
       OrientationWeight: 0
+      MovementWeightCache: 0
     - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
       MovementWeight: 0
       OrientationWeight: 0
-  SteeringAgent: {fileID: 0}
+      MovementWeightCache: 0
+    - Direction: {x: -0.4472136, y: 0, z: 0.8944272}
+      MovementWeight: 0
+      OrientationWeight: 0
+      MovementWeightCache: 0
+  CurrentMovementSpeed: {x: 0, y: 0, z: 0}
+  CurrentOritation: {x: 0, y: 0, z: 0}
+  StartPosition: {x: 0, y: 0, z: 0}
   FriendlyAgents: []
---- !u!114 &177171234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2767115137878917025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 309d6dec894b45a4392552909a23a10f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  ClosestDistance: 4
-  DesiredDistance: 10
-  ToDesiredDistancePriority: 1
-  FromClosestDistancePriority: 2
-  BackwardsFallof: 0.25
-  Priority: 1
-  SteeringData:
-    Directions:
-    - Direction: {x: 0, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0, y: 0, z: 1}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 1, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: 0, y: 0, z: -1}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -1, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0

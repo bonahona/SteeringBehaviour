@@ -5,8 +5,6 @@ namespace Fyrvall.SteeringBehaviour
     [CreateAssetMenu(fileName = "AvoidTeamBehaviour", menuName = "Steering/Avoid Team")]
     public class AvoidTeamsSteeringBehaviour : SteeringBehaviourBase
     {
-        private static readonly SteeringData SteeringDataCache = new SteeringData();
-
         public float DesiredDistance = 1f;
 
         [Range(0f, 5f)]

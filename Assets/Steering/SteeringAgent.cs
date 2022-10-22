@@ -19,9 +19,11 @@ namespace Fyrvall.SteeringBehaviour
         [HideInInspector]
         public SteeringData TargetSteeringData;
         [HideInInspector]
+        public SteeringData SteeringDataCache;
+        [HideInInspector]
         public Vector3 CurrentMovementSpeed;
         [HideInInspector]
-        public Vector3 CurrentOritation;
+        public Vector3 CurrentOrienttion;
 
         [HideInInspector]
         public Vector3 StartPosition;
@@ -57,10 +59,6 @@ namespace Fyrvall.SteeringBehaviour
                 return;
             }
 
-            foreach(var behaviour in SteeringBehaviours) {
-                behaviour.UpdateBehaviour();
-            }
-
             UpdateTargetDirections();
             UpdateCurrentDirections();
         }
@@ -86,8 +84,10 @@ namespace Fyrvall.SteeringBehaviour
         private void UpdateOritation()
         {
             var orientationDirection = GetOrientationDirection();
-            CurrentOritation = Vector3.Slerp(CurrentOritation, orientationDirection, 0.1f);
-            transform.rotation = Quaternion.LookRotation(CurrentOritation);
+            CurrentOrienttion = Vector3.Slerp(CurrentOrienttion, orientationDirection, 0.1f);
+            if (CurrentOrienttion.sqrMagnitude > 0) {
+                transform.rotation = Quaternion.LookRotation(CurrentOrienttion);
+            }
         }
 
         private Vector3 GetMovementDirection()
@@ -105,11 +105,15 @@ namespace Fyrvall.SteeringBehaviour
             TargetSteeringData.Reset();
 
             foreach (var behaviour in SteeringBehaviours) {
-                var steeringData = behaviour.GetSteeringData();
+                if (behaviour == null) {
+                    continue;
+                }
 
-                for (int i = 0; i < steeringData.Directions.Length; i++) {
-                    TargetSteeringData.Directions[i].MovementWeight += steeringData.Directions[i].MovementWeight;
-                    TargetSteeringData.Directions[i].OrientationWeight += steeringData.Directions[i].OrientationWeight;
+                behaviour.UpdateBehaviour(this, SteeringDataCache);
+
+                for (int i = 0; i < SteeringDataCache.Directions.Length; i++) {
+                    TargetSteeringData.Directions[i].MovementWeight += SteeringDataCache.Directions[i].MovementWeight;
+                    TargetSteeringData.Directions[i].OrientationWeight += SteeringDataCache.Directions[i].OrientationWeight;
                 }
             }
 

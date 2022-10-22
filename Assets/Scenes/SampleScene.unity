@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -166,6 +166,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -214,6 +215,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 50, y: 1, z: 50}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -328,28 +330,21 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &1104791142
+--- !u!1001 &954451698
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 177171234, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 5274421802968185241}
-    - target: {fileID: 177171234, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
-      propertyPath: ClosestDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2767115137878917025, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
       propertyPath: m_Name
-      value: AgentMelee01 (42)
+      value: AgentMelee01
       objectReference: {fileID: 0}
     - target: {fileID: 2767115137878917081, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
       propertyPath: m_RootOrder
@@ -357,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2767115137878917081, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.72
+      value: 4.693701
       objectReference: {fileID: 0}
     - target: {fileID: 2767115137878917081, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -365,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2767115137878917081, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5200001
+      value: 3.634901
       objectReference: {fileID: 0}
     - target: {fileID: 2767115137878917081, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -396,127 +391,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2767115137878917084, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
-      propertyPath: ClampMovement
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2767115137878917087, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
-      propertyPath: Priority
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 5274421802968185241}
+    - target: {fileID: 2767115137878917084, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
+      propertyPath: SteeringBehaviours.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2767115137878917087, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
-      propertyPath: DesiredDistance
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 177171234, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
-    - {fileID: 2767115137878917085, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
---- !u!1 &1104791143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2767115137878917025, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
-  m_PrefabInstance: {fileID: 1104791142}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1104791144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104791143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 309d6dec894b45a4392552909a23a10f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 5274421802968185241}
-  ClosestDistance: 4
-  DesiredDistance: 6
-  ToDesiredDistancePriority: 1
-  FromClosestDistancePriority: 3
-  BackwardsFallof: 0.25
-  Priority: 1
-  SteeringData:
-    Directions:
-    - Direction: {x: 0, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 0, y: 0, z: 1}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 0.4472136, y: 0, z: 0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 0.70710677, y: 0, z: 0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 0.8944272, y: 0, z: 0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 1, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 0.8944272, y: 0, z: -0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 0.70710677, y: 0, z: -0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 0.4472136, y: 0, z: -0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: 0, y: 0, z: -1}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: -0.4472136, y: 0, z: -0.8944272}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: -0.70710677, y: 0, z: -0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: -0.8944272, y: 0, z: -0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: -1, y: 0, z: 0}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: -0.8944272, y: 0, z: 0.4472136}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
-    - Direction: {x: -0.70710677, y: 0, z: 0.70710677}
-      MovementWeight: 0
-      OrientationWeight: 0
-      MovementWeightCache: 0
---- !u!54 &1104791145
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104791143}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
 --- !u!1001 &5274421802968185234
 PrefabInstance:
   m_ObjectHideFlags: 0
