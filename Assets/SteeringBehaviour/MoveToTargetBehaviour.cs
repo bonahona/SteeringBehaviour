@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Fyrvall.SteeringBehaviour
 {
     [RequireComponent(typeof(SteeringAgent))]
-    public class MoveToTargetBehaviour : MonoBehaviour, ISteeringBehaviour
+    public class MoveToTargetBehaviour : MonoBehaviour, SteeringBehaviourBase
     {
         public Transform Target;
         public float ClosestDistance = 1f;

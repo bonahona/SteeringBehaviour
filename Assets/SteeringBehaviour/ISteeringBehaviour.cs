@@ -1,8 +1,9 @@
+using UnityEngine;
+
 namespace Fyrvall.SteeringBehaviour
 {
-    public interface ISteeringBehaviour
+    public abstract class SteeringBehaviourBase : ScriptableObject
     {
-        SteeringData GetSteeringData();
-        void UpdateBehaviour();
+        public abstract void UpdateBehaviour(SteeringAgent agent, SteeringData steeringData);
     }
 }

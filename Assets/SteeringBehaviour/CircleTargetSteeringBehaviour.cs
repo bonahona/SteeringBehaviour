@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Fyrvall.SteeringBehaviour
 {
     [RequireComponent(typeof(SteeringAgent))]
-    public class CircleTargetSteeringBehaviour : MonoBehaviour, ISteeringBehaviour
+    public class CircleTargetSteeringBehaviour : MonoBehaviour, SteeringBehaviourBase
     {
         public static readonly Quaternion[] Directions = new Quaternion[]{
             Quaternion.Euler(0, -90, 0),

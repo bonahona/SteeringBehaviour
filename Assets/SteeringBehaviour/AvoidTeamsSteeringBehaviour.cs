@@ -1,43 +1,23 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Fyrvall.SteeringBehaviour
 {
-    [RequireComponent(typeof(SteeringAgent))]
-    public class AvoidTeamsSteeringBehaviour : MonoBehaviour, ISteeringBehaviour
+    [CreateAssetMenu(fileName = "AvoidTeamBehaviour", menuName = "Steering/Avoid Team")]
+    public class AvoidTeamsSteeringBehaviour : SteeringBehaviourBase
     {
+        private static readonly SteeringData SteeringDataCache = new SteeringData();
+
         public float DesiredDistance = 1f;
 
         [Range(0f, 5f)]
         public float Priority = 1f;
 
-        [HideInInspector]
-        public SteeringData SteeringData = new SteeringData();
-        [HideInInspector]
-        public SteeringData SteeringDataCache = new SteeringData();
-        [HideInInspector]
-        public SteeringAgent SteeringAgent;
-        [HideInInspector]
-        public List<SteeringAgent> FriendlyAgents;
-
-        private void Start()
+        public override void UpdateBehaviour(SteeringAgent agent, SteeringData steeringData)
         {
-            SteeringAgent = GetComponent<SteeringAgent>();
-            FriendlyAgents = GameObject.FindObjectsOfType<SteeringAgent>()
-                .Where(a => a != SteeringAgent)
-                .ToList();
-        }
+            steeringData.Reset();
 
-
-        public SteeringData GetSteeringData() => SteeringData;
-
-        public void UpdateBehaviour()
-        {
-            SteeringData.Reset();
-
-            foreach (var agent in FriendlyAgents) {
-                var delta = agent.transform.position - transform.position;
+            foreach (var friendlyAgent in agent.FriendlyAgents) {
+                var delta = friendlyAgent.transform.position - agent.transform.position;
 
                 if (delta.magnitude > DesiredDistance) {
                     continue;
@@ -45,7 +25,7 @@ namespace Fyrvall.SteeringBehaviour
 
                 var weight = 1f - (delta.magnitude / DesiredDistance);
                 SteeringDataCache.MovementFromDirection(-delta.normalized, 1f, weight * Priority);
-                SteeringData.Apply(SteeringDataCache);
+                steeringData.Apply(SteeringDataCache);
             }
         }
 

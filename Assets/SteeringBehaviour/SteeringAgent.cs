@@ -11,8 +11,8 @@ namespace Fyrvall.SteeringBehaviour
 
         [Range(0f, 5f)]
         public float ClampMovement = 0.1f;
-
-        public List<ISteeringBehaviour> SteeringBehaviours = new List<ISteeringBehaviour>();
+        public List<SteeringBehaviourBase> SteeringBehaviours = new List<SteeringBehaviourBase>();
+        public Transform Target;
 
         [HideInInspector]
         public SteeringData CurrentSteeringData;
@@ -23,6 +23,12 @@ namespace Fyrvall.SteeringBehaviour
         [HideInInspector]
         public Vector3 CurrentOritation;
 
+        [HideInInspector]
+        public Vector3 StartPosition;
+
+        [HideInInspector]
+        public List<SteeringAgent> FriendlyAgents;
+
         public bool IsStandStill() => CurrentMovementSpeed.magnitude < (ClampMovement * ClampMovement);
 
         private void Start()
@@ -30,9 +36,8 @@ namespace Fyrvall.SteeringBehaviour
             CurrentSteeringData = new SteeringData();
             TargetSteeringData = new SteeringData();
 
-            SteeringBehaviours = GetComponents<MonoBehaviour>()
-                .Where(c => c is ISteeringBehaviour)
-                .Cast<ISteeringBehaviour>()
+            FriendlyAgents = FindObjectsOfType<SteeringAgent>()
+                .Where(a => a != this)
                 .ToList();
         }
 

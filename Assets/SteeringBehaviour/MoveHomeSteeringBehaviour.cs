@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Fyrvall.SteeringBehaviour
 {
     [RequireComponent(typeof(SteeringAgent))]
-    public class MoveHomeSteeringBehaviour : MonoBehaviour, ISteeringBehaviour
+    public class MoveHomeSteeringBehaviour : MonoBehaviour, SteeringBehaviourBase
     {
         [Range(0f, 5f)]
         public float Priority = 1f;
