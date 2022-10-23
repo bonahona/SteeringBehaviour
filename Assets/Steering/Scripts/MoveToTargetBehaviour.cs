@@ -27,7 +27,7 @@ namespace Fyrvall.SteeringBehaviour
                 return;
             }
 
-            var delta = (agent.Target.position - agent.transform.position);
+            var delta = (agent.Target.transform.position - agent.transform.position);
             var distance = delta.magnitude;
             if (distance < ClosestDistance) {
                 var weight = 1f - delta.magnitude / ClosestDistance;

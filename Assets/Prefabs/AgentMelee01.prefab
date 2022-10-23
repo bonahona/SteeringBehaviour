@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 2767115137878917082}
   - component: {fileID: 2767115137878917085}
   - component: {fileID: 2767115137878917084}
+  - component: {fileID: 1828232484}
   m_Layer: 0
   m_Name: AgentMelee01
   m_TagString: Untagged
@@ -228,11 +229,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseAgent: 1
   MovementSpeed: 10
+  Radius: 1
   ClampMovement: 0.1
   SteeringBehaviours:
   - {fileID: 11400000, guid: 8c227a70770a62047b17d2ceb11dbd1a, type: 2}
   - {fileID: 11400000, guid: 8f3a8968db889664bbf4ebdf975b3352, type: 2}
   Target: {fileID: 0}
+  Team: 1
   CurrentSteeringData:
     Directions:
     - Direction: {x: 0, y: 0, z: 0}
@@ -439,3 +442,15 @@ MonoBehaviour:
   CurrentOrienttion: {x: 0, y: 0, z: 0}
   StartPosition: {x: 0, y: 0, z: 0}
   FriendlyAgents: []
+--- !u!114 &1828232484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2767115137878917025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a699eeb09a1823242b71467320de8185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

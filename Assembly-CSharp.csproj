@@ -65,6 +65,8 @@
     <Compile Include="Assets\Steering\Scripts\CircleTargetSteeringBehaviour.cs" />
     <Compile Include="Assets\Steering\Scripts\AvoidTeamsSteeringBehaviour.cs" />
     <Compile Include="Assets\Steering\Scripts\MoveHomeSteeringBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\TeamType.cs" />
+    <Compile Include="Assets\Misc\PeachColor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

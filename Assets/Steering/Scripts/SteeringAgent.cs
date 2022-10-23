@@ -8,11 +8,14 @@ namespace Fyrvall.SteeringBehaviour
     {
         public bool UseAgent = true;        // Reserved for players
         public float MovementSpeed = 2;
+        public float Radius = 1f;
 
         [Range(0f, 5f)]
         public float ClampMovement = 0.1f;
         public List<SteeringBehaviourBase> SteeringBehaviours = new List<SteeringBehaviourBase>();
-        public Transform Target;
+        public SteeringAgent Target;
+
+        public TeamType Team;
 
         [HideInInspector]
         public SteeringData CurrentSteeringData;
@@ -40,6 +43,7 @@ namespace Fyrvall.SteeringBehaviour
 
             FriendlyAgents = FindObjectsOfType<SteeringAgent>()
                 .Where(a => a != this)
+                .Where(a => a.Team == Team)
                 .ToList();
         }
 
