@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace Fyrvall.SteeringBehaviour
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class SteeringAgent : MonoBehaviour
     {
         public bool UseAgent = true;        // Reserved for players
@@ -17,6 +18,8 @@ namespace Fyrvall.SteeringBehaviour
 
         public TeamType Team;
 
+        [HideInInspector]
+        public Rigidbody Rigidbody;
         [HideInInspector]
         public SteeringData CurrentSteeringData;
         [HideInInspector]
@@ -37,6 +40,7 @@ namespace Fyrvall.SteeringBehaviour
 
         private void Start()
         {
+            Rigidbody = GetComponent<Rigidbody>();
             StartPosition = transform.position;
             CurrentSteeringData = new SteeringData();
             TargetSteeringData = new SteeringData();
@@ -47,7 +51,7 @@ namespace Fyrvall.SteeringBehaviour
                 .ToList();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if(!UseAgent) {
                 return;
@@ -82,7 +86,8 @@ namespace Fyrvall.SteeringBehaviour
             }
 
             CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, movementDirection * MovementSpeed, 0.1f);
-            transform.position += (CurrentMovementSpeed * Time.deltaTime);
+
+            Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
         }
 
         private void UpdateOritation()

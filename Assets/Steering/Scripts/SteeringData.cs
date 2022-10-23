@@ -92,6 +92,23 @@ namespace Fyrvall.SteeringBehaviour
             }
         }
 
+        public void AvoidDirection(Vector3 fromDirection, float weight, Vector3 impactPosition)
+        {
+            var adjustedDirection = Quaternion.Euler(0, 90, 0) * fromDirection;
+
+            foreach (var direction in Directions) {
+                var dot = Mathf.Abs(Vector3.Dot(direction.Direction, adjustedDirection));
+
+                var forwardDot = Vector3.Dot(direction.Direction, fromDirection);
+                if(forwardDot > 0) {
+                    dot = 0;
+                }
+
+                Debug.DrawLine(impactPosition, impactPosition + dot * direction.Direction, Color.blue);
+                direction.MovementWeight = dot * weight;
+            }
+        }
+
         public void OrientationFromDirection(Vector3 fromDirection, float backwardbackwardsFactor = 1f, float weight = 1f)
         {
             foreach (var direction in Directions) {

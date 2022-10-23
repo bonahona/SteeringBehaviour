@@ -27,8 +27,8 @@ namespace Fyrvall.SteeringBehaviour
                 return SteeringDataCache;
             }
 
-            var weight = mostPriminentHit.Value.distance / LookAheadDistance;
-            SteeringDataCache.MovementFromDirection(mostPriminentHit.Value.normal, 1f, weight * Priority);
+            var weight = 1f - (mostPriminentHit.Value.distance / LookAheadDistance);
+            SteeringDataCache.AvoidDirection(-mostPriminentHit.Value.normal, weight * Priority, mostPriminentHit.Value.point);
 
             return SteeringDataCache;
         }
@@ -36,13 +36,18 @@ namespace Fyrvall.SteeringBehaviour
 
         public RaycastHit? GetMostProminentObstacle(SteeringAgent agent)
         {
-            if(Physics.Raycast(agent.transform.position, agent.transform.forward, out var rayCastHit, LookAheadDistance)) {
+            if(Physics.Raycast(agent.transform.position, GetForwardDirection(agent), out var rayCastHit, LookAheadDistance)) {
                 if (rayCastHit.collider.GetComponent<SteeringObstacle>() != null) {
                     return rayCastHit;
                 }
             }
 
             return null;
+        }
+
+        public Vector3 GetForwardDirection(SteeringAgent steeringAgent)
+        {
+            return steeringAgent.CurrentMovementSpeed.normalized;
         }
     }
 }

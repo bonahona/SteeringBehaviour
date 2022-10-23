@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Avoid Obstacle
   m_EditorClassIdentifier: 
   LookAheadDistance: 10
-  Priority: 1
+  Priority: 2
