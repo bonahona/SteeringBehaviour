@@ -114,6 +114,7 @@ namespace Fyrvall.SteeringBehaviour
         {
             for (int i = 0; i < Directions.Length; i++) {
                 Directions[i].MovementWeight += other.Directions[i].MovementWeight;
+                Directions[i].OrientationWeight += other.Directions[i].OrientationWeight;
             }
         }
 

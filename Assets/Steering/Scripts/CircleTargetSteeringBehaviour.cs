@@ -26,7 +26,7 @@ namespace Fyrvall.SteeringBehaviour
         public override SteeringData UpdateBehaviour(SteeringAgent agent)
         {
             SteeringDataCache.Reset();
-            if (agent.Target == null) {
+            if (!agent.ActiveTarget()) {
                 return SteeringDataCache;
             }
 
@@ -36,7 +36,8 @@ namespace Fyrvall.SteeringBehaviour
                 return SteeringDataCache;
             }
 
-            SteeringDataCache.MovementFromDirection(Directions[(byte)Direction] * delta.normalized, 0f, Priority);
+            SteeringDataCache.MovementFromDirection(Directions[(byte)Direction] * delta.normalized, 0, Priority);
+            SteeringDataCache.OrientationFromDirection(Directions[(byte)Direction] * delta.normalized, 0, Priority);
             return SteeringDataCache;
         }
     }

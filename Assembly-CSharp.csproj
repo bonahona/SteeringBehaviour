@@ -68,6 +68,8 @@
     <Compile Include="Assets\Steering\Scripts\TeamType.cs" />
     <Compile Include="Assets\Misc\PeachColor.cs" />
     <Compile Include="Assets\Misc\PlayerCamera.cs" />
+    <Compile Include="Assets\Steering\Scripts\SteeringObstacle.cs" />
+    <Compile Include="Assets\Steering\Scripts\AvoidObstacleBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

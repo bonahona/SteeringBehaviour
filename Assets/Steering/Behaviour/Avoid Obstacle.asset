@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f93fa9333eb07c4c8eab64b1722113f, type: 3}
-  m_Name: MoveHomeBehaviour
+  m_Script: {fileID: 11500000, guid: 234262975fc50034a9ece5ac22e25015, type: 3}
+  m_Name: Avoid Obstacle
   m_EditorClassIdentifier: 
-  DesiredDistance: 5
+  LookAheadDistance: 10
   Priority: 1

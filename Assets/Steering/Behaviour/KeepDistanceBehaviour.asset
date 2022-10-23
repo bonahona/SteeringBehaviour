@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f93fa9333eb07c4c8eab64b1722113f, type: 3}
-  m_Name: MoveHomeBehaviour
+  m_Script: {fileID: 11500000, guid: 309d6dec894b45a4392552909a23a10f, type: 3}
+  m_Name: KeepDistanceBehaviour
   m_EditorClassIdentifier: 
-  DesiredDistance: 5
-  Priority: 1
+  ClosestDistance: 15
+  DesiredDistance: 20
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 1
+  BackwardsFallof: 1
+  Priority: 2

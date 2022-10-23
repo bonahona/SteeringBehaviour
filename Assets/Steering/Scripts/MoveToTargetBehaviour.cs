@@ -32,11 +32,11 @@ namespace Fyrvall.SteeringBehaviour
             if (distance < ClosestDistance) {
                 var weight = 1f - delta.magnitude / ClosestDistance;
                 SteeringDataCache.MovementFromDirection(-delta.normalized, BackwardsFallof, weight * Priority * FromClosestDistancePriority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, weight * Priority * FromClosestDistancePriority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority * FromClosestDistancePriority);
             } else if (distance < DesiredDistance) {
                 var weight = (delta.magnitude - ClosestDistance) / (DesiredDistance - ClosestDistance);
                 SteeringDataCache.MovementFromDirection(delta.normalized, BackwardsFallof, weight * Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, weight * Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority);
             } else {
                 SteeringDataCache.MovementFromDirection(delta.normalized, BackwardsFallof, Priority * ToDesiredDistancePriority);
                 SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority * ToDesiredDistancePriority);

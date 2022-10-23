@@ -22,8 +22,9 @@ namespace Fyrvall.SteeringBehaviour
                 }
 
                 var weight = 1f - (delta.magnitude / DesiredDistance);
-                SteeringDataCache.MovementFromDirection(-delta.normalized, 1f, weight * Priority);
-                SteeringDataCache.Apply(SteeringDataCache);
+                WorkCache.MovementFromDirection(-delta.normalized, 1f, weight * Priority);
+                WorkCache.OrientationFromDirection(-delta.normalized, 1f, weight * Priority);
+                SteeringDataCache.Apply(WorkCache);
             }
 
             return SteeringDataCache;

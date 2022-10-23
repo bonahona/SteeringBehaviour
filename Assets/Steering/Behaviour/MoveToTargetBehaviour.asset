@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309d6dec894b45a4392552909a23a10f, type: 3}
   m_Name: MoveToTargetBehaviour
   m_EditorClassIdentifier: 
-  ClosestDistance: 3
-  DesiredDistance: 6
+  ClosestDistance: 5
+  DesiredDistance: 10
   ToDesiredDistancePriority: 1
   FromClosestDistancePriority: 1
   BackwardsFallof: 0.25
-  Priority: 1
+  Priority: 2

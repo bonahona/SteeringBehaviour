@@ -37,6 +37,7 @@ namespace Fyrvall.SteeringBehaviour
 
         private void Start()
         {
+            StartPosition = transform.position;
             CurrentSteeringData = new SteeringData();
             TargetSteeringData = new SteeringData();
 

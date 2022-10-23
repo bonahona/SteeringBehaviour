@@ -5,6 +5,9 @@ namespace Fyrvall.SteeringBehaviour
     [CreateAssetMenu(fileName = "MoveHomeBehaviour", menuName = "Steering/Move home")]
     public class MoveHomeSteeringBehaviour: SteeringBehaviourBase
     {
+        [Range(0f, 10f)]
+        public float DesiredDistance = 1f;
+
         [Range(0f, 5f)]
         public float Priority = 1f;
 
@@ -16,7 +19,16 @@ namespace Fyrvall.SteeringBehaviour
             }
 
             var delta = (agent.StartPosition - agent.transform.position);
-            SteeringDataCache.MovementFromDirection(-delta.normalized * Priority, 1f);
+            var distance = delta.magnitude;
+            if (distance > DesiredDistance) {
+                SteeringDataCache.MovementFromDirection(delta.normalized, 1f, Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, 1f, Priority);
+            } else {
+                var weight = distance / DesiredDistance;
+                SteeringDataCache.MovementFromDirection(delta.normalized, 1f, weight * Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, 1f, weight * Priority);
+            }
+
             return SteeringDataCache;
         }
     }
