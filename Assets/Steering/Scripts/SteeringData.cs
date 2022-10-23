@@ -50,6 +50,7 @@ namespace Fyrvall.SteeringBehaviour
             foreach(var direction in Directions) {
                 direction.MovementWeight = 0;
                 direction.OrientationWeight = 0;
+                direction.MovementWeightCache = 0;
             }
         }
 

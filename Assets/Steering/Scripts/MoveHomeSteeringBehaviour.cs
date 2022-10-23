@@ -8,12 +8,16 @@ namespace Fyrvall.SteeringBehaviour
         [Range(0f, 5f)]
         public float Priority = 1f;
 
-        public override void UpdateBehaviour(SteeringAgent agent, SteeringData steeringData)
+        public override SteeringData UpdateBehaviour(SteeringAgent agent)
         {
-            steeringData.Reset();
+            SteeringDataCache.Reset();
+            if(agent.ActiveTarget()) {
+                return SteeringDataCache;
+            }
 
             var delta = (agent.StartPosition - agent.transform.position);
-            steeringData.MovementFromDirection(delta.normalized * Priority, 1f);
+            SteeringDataCache.MovementFromDirection(-delta.normalized * Priority, 1f);
+            return SteeringDataCache;
         }
     }
 }

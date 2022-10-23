@@ -67,6 +67,7 @@
     <Compile Include="Assets\Steering\Scripts\MoveHomeSteeringBehaviour.cs" />
     <Compile Include="Assets\Steering\Scripts\TeamType.cs" />
     <Compile Include="Assets\Misc\PeachColor.cs" />
+    <Compile Include="Assets\Misc\PlayerCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

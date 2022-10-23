@@ -6,6 +6,6 @@ namespace Fyrvall.SteeringBehaviour
     {
         protected static readonly SteeringData SteeringDataCache = new SteeringData();
 
-        public abstract void UpdateBehaviour(SteeringAgent agent, SteeringData steeringData);
+        public abstract SteeringData UpdateBehaviour(SteeringAgent agent);
     }
 }

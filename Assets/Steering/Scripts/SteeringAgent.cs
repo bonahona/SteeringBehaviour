@@ -22,8 +22,6 @@ namespace Fyrvall.SteeringBehaviour
         [HideInInspector]
         public SteeringData TargetSteeringData;
         [HideInInspector]
-        public SteeringData SteeringDataCache;
-        [HideInInspector]
         public Vector3 CurrentMovementSpeed;
         [HideInInspector]
         public Vector3 CurrentOrienttion;
@@ -35,6 +33,7 @@ namespace Fyrvall.SteeringBehaviour
         public List<SteeringAgent> FriendlyAgents;
 
         public bool IsStandStill() => CurrentMovementSpeed.magnitude < (ClampMovement * ClampMovement);
+        public bool ActiveTarget() => Target?.isActiveAndEnabled ?? false;
 
         private void Start()
         {
@@ -89,7 +88,7 @@ namespace Fyrvall.SteeringBehaviour
         {
             var orientationDirection = GetOrientationDirection();
             CurrentOrienttion = Vector3.Slerp(CurrentOrienttion, orientationDirection, 0.1f);
-            if (CurrentOrienttion.sqrMagnitude > 0) {
+            if (CurrentOrienttion.sqrMagnitude > 0.1f) {
                 transform.rotation = Quaternion.LookRotation(CurrentOrienttion);
             }
         }
@@ -113,11 +112,11 @@ namespace Fyrvall.SteeringBehaviour
                     continue;
                 }
 
-                behaviour.UpdateBehaviour(this, SteeringDataCache);
+                var steeringData = behaviour.UpdateBehaviour(this);
 
-                for (int i = 0; i < SteeringDataCache.Directions.Length; i++) {
-                    TargetSteeringData.Directions[i].MovementWeight += SteeringDataCache.Directions[i].MovementWeight;
-                    TargetSteeringData.Directions[i].OrientationWeight += SteeringDataCache.Directions[i].OrientationWeight;
+                for (int i = 0; i < steeringData.Directions.Length; i++) {
+                    TargetSteeringData.Directions[i].MovementWeight += steeringData.Directions[i].MovementWeight;
+                    TargetSteeringData.Directions[i].OrientationWeight += steeringData.Directions[i].OrientationWeight;
                 }
             }
 

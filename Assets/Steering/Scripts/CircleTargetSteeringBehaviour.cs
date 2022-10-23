@@ -21,20 +21,23 @@ namespace Fyrvall.SteeringBehaviour
         [Range(0f, 5f)]
         public float Priority = 1f;
 
-        public override void UpdateBehaviour(SteeringAgent agent, SteeringData steeringData)
+        public DirectionType Direction = DirectionType.Left;
+
+        public override SteeringData UpdateBehaviour(SteeringAgent agent)
         {
-            steeringData.Reset();
-            //if (Target == null) {
-            //    return;
-            //}
+            SteeringDataCache.Reset();
+            if (agent.Target == null) {
+                return SteeringDataCache;
+            }
 
-            //var delta = (Target.position - transform.position);
-            //var distance = delta.magnitude;
-            //if (distance > DesiredDistance) {
-            //    return;
-            //}
+            var delta = (agent.Target.transform.position - agent.transform.position);
+            var distance = delta.magnitude;
+            if (distance > DesiredDistance) {
+                return SteeringDataCache;
+            }
 
-            //SteeringData.MovementFromDirection(Directions[(byte)CurrentDirection] * delta.normalized, 0f, Priority);
+            SteeringDataCache.MovementFromDirection(Directions[(byte)Direction] * delta.normalized, 0f, Priority);
+            return SteeringDataCache;
         }
     }
 }

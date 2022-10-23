@@ -10,9 +10,9 @@ namespace Fyrvall.SteeringBehaviour
         [Range(0f, 5f)]
         public float Priority = 1f;
 
-        public override void UpdateBehaviour(SteeringAgent agent, SteeringData steeringData)
+        public override SteeringData UpdateBehaviour(SteeringAgent agent)
         {
-            steeringData.Reset();
+            SteeringDataCache.Reset();
 
             foreach (var friendlyAgent in agent.FriendlyAgents) {
                 var delta = friendlyAgent.transform.position - agent.transform.position;
@@ -23,10 +23,10 @@ namespace Fyrvall.SteeringBehaviour
 
                 var weight = 1f - (delta.magnitude / DesiredDistance);
                 SteeringDataCache.MovementFromDirection(-delta.normalized, 1f, weight * Priority);
-                steeringData.Apply(SteeringDataCache);
+                SteeringDataCache.Apply(SteeringDataCache);
             }
-        }
 
-        public int Index() => 1;
+            return SteeringDataCache;
+        }
     }
 }
