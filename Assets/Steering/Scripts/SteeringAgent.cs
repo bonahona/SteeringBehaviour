@@ -14,7 +14,7 @@ namespace Fyrvall.SteeringBehaviour
 
         [Range(0f, 5f)]
         public float ClampMovement = 0.1f;
-        public List<SteeringBehaviourBase> SteeringBehaviours = new List<SteeringBehaviourBase>();
+        public BehaviourContainer Behaviour;
         public SteeringAgent Target;
 
         public TeamType Team;
@@ -72,7 +72,7 @@ namespace Fyrvall.SteeringBehaviour
 
         private void UpdateSteeringBehaviour()
         {
-            if(SteeringBehaviours.Count == 0) {
+            if((Behaviour?.Behaviours.Count ?? 0) == 0) {
                 return;
             }
 
@@ -122,7 +122,7 @@ namespace Fyrvall.SteeringBehaviour
         {
             TargetSteeringData.Reset();
 
-            foreach (var behaviour in SteeringBehaviours) {
+            foreach (var behaviour in Behaviour.Behaviours) {
                 if (behaviour == null) {
                     continue;
                 }

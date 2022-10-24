@@ -231,10 +231,7 @@ MonoBehaviour:
   MovementSpeed: 10
   Radius: 1
   ClampMovement: 0.5
-  SteeringBehaviours:
-  - {fileID: 11400000, guid: bc95d7d070ece1d47a478fdb1260f974, type: 2}
-  - {fileID: 11400000, guid: 8f3a8968db889664bbf4ebdf975b3352, type: 2}
-  - {fileID: 11400000, guid: 8c227a70770a62047b17d2ceb11dbd1a, type: 2}
+  Behaviour: {fileID: 11400000, guid: 13207a2717d8f1944b311e200e863fcb, type: 2}
   Target: {fileID: 0}
   Team: 1
   Rigidbody: {fileID: 0}
