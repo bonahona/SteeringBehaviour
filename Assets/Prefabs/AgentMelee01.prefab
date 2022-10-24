@@ -232,11 +232,12 @@ MonoBehaviour:
   Radius: 1
   ClampMovement: 0.5
   SteeringBehaviours:
-  - {fileID: 11400000, guid: 8c227a70770a62047b17d2ceb11dbd1a, type: 2}
+  - {fileID: 11400000, guid: bc95d7d070ece1d47a478fdb1260f974, type: 2}
   - {fileID: 11400000, guid: 8f3a8968db889664bbf4ebdf975b3352, type: 2}
-  - {fileID: 11400000, guid: 9a7b61cc6f2e55e43989a7b2ac6f32e9, type: 2}
+  - {fileID: 11400000, guid: 8c227a70770a62047b17d2ceb11dbd1a, type: 2}
   Target: {fileID: 0}
   Team: 1
+  Rigidbody: {fileID: 0}
   CurrentSteeringData:
     Directions:
     - Direction: {x: 0, y: 0, z: 0}
@@ -371,6 +372,8 @@ MonoBehaviour:
       MovementWeightCache: 0
   CurrentMovementSpeed: {x: 0, y: 0, z: 0}
   CurrentOrienttion: {x: 0, y: 0, z: 0}
+  CurrentNavMeshPathIndex: 0
+  RepathTimer: 0
   StartPosition: {x: 0, y: 0, z: 0}
   FriendlyAgents: []
 --- !u!114 &1828232484

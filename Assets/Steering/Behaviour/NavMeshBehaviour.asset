@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b72716916f86d04f9de1c76593b3051, type: 3}
   m_Name: NavMeshBehaviour
   m_EditorClassIdentifier: 
+  DesiredDistance: 10
+  RepathTimer: 1
+  FinishDistance: 1
+  Priority: 3

@@ -17,4 +17,4 @@ MonoBehaviour:
   ToDesiredDistancePriority: 1
   FromClosestDistancePriority: 1
   BackwardsFallof: 0.25
-  Priority: 3
+  Priority: 2

@@ -6,6 +6,11 @@ namespace Fyrvall.SteeringBehaviour
     [CreateAssetMenu(fileName = "NavMeshBehaviour", menuName = "Steering/Nav Mesh")]
     public class NavMeshSteeringBehaviour : SteeringBehaviourBase
     {
+        public float DesiredDistance = 10f;
+        public float RepathTimer = 2f;
+        public float FinishDistance = 0.1f;
+        public float Priority = 1f;
+
         public override SteeringData UpdateBehaviour(SteeringAgent agent)
         {
             SteeringDataCache.Reset();
@@ -18,12 +23,13 @@ namespace Fyrvall.SteeringBehaviour
                 Repath(agent);
             }
 
-            agent.RepathTimer -= Time.fixedTime;
+            agent.RepathTimer -= Time.fixedDeltaTime;
 
             if((agent.CurrentNavMeshPathIndex == 0 || agent.CurrentNavMeshPathIndex == agent.NavMeshPath.corners.Length) || agent.NavMeshPath.status != NavMeshPathStatus.PathComplete) {
                 return SteeringDataCache;
             }
 
+            PathToNextCornet(agent);
             DebugDrawPath(agent);
 
             return SteeringDataCache;
@@ -37,7 +43,7 @@ namespace Fyrvall.SteeringBehaviour
                 agent.CurrentNavMeshPathIndex = 0;
             }
 
-            agent.RepathTimer = 1f;
+            agent.RepathTimer = RepathTimer;
         }
 
         private void DebugDrawPath(SteeringAgent agent)
@@ -48,6 +54,26 @@ namespace Fyrvall.SteeringBehaviour
                 } else {
                     Debug.DrawLine(agent.NavMeshPath.corners[i - 1], agent.NavMeshPath.corners[i], Color.yellow);
                 }
+            }
+        }
+
+        private void PathToNextCornet(SteeringAgent steeringAgent)
+        {
+            var nextCorner = steeringAgent.NavMeshPath.corners[steeringAgent.CurrentNavMeshPathIndex];
+            var delta = nextCorner - steeringAgent.transform.position;
+
+            var distance = delta.magnitude;
+            if (distance < FinishDistance) {
+                steeringAgent.CurrentNavMeshPathIndex++;
+            }
+
+            if(distance < DesiredDistance) {
+                var weight = distance / DesiredDistance;
+                SteeringDataCache.MovementFromDirection(delta.normalized, 0f, weight * Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, 0f, weight * Priority);
+            } else {
+                SteeringDataCache.MovementFromDirection(delta.normalized, 0f, Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, 0f, Priority);
             }
         }
     }
