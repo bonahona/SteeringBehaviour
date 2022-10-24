@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.AI;
 
 namespace Fyrvall.SteeringBehaviour
 {
@@ -28,6 +29,12 @@ namespace Fyrvall.SteeringBehaviour
         public Vector3 CurrentMovementSpeed;
         [HideInInspector]
         public Vector3 CurrentOrienttion;
+        [HideInInspector]
+        public NavMeshPath NavMeshPath;
+        [HideInInspector]
+        public int CurrentNavMeshPathIndex = 0;
+        [HideInInspector]
+        public float RepathTimer = 0f;
 
         [HideInInspector]
         public Vector3 StartPosition;
@@ -44,6 +51,8 @@ namespace Fyrvall.SteeringBehaviour
             StartPosition = transform.position;
             CurrentSteeringData = new SteeringData();
             TargetSteeringData = new SteeringData();
+
+            NavMeshPath = new NavMeshPath();
 
             FriendlyAgents = FindObjectsOfType<SteeringAgent>()
                 .Where(a => a != this)
