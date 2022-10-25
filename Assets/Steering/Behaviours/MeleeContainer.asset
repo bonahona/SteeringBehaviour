@@ -16,7 +16,7 @@ MonoBehaviour:
   DesiredDistance: 15
   RepathTimer: 1
   FinishDistance: 1
-  Priority: 5
+  Priority: 3
   DebugPath: 1
 --- !u!114 &-6031476595039695585
 MonoBehaviour:
