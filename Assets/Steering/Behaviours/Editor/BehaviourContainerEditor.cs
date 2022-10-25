@@ -37,6 +37,10 @@ namespace Fyrvall.SteeringBehaviour {
 
         public override void OnInspectorGUI()
         {
+            base.OnInspectorGUI();
+
+            EditorGUILayout.Space();
+
             var container = target as BehaviourContainer;
 
             ListBehaviours(container);

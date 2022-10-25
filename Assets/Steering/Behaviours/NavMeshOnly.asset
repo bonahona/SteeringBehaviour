@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3972663878096867551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b72716916f86d04f9de1c76593b3051, type: 3}
+  m_Name: NavMeshSteeringBehaviour
+  m_EditorClassIdentifier: 
+  Enabled: 1
+  DesiredDistance: 1
+  RepathTimer: 2
+  FinishDistance: 1
+  Priority: 1
+  DebugPath: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fd7095fa563f04581865d8a62652db, type: 3}
+  m_Name: NavMeshOnly
+  m_EditorClassIdentifier: 
+  ClampMovement: 0.25
+  Behaviours:
+  - {fileID: -3972663878096867551}

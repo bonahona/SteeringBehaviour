@@ -12,8 +12,6 @@ namespace Fyrvall.SteeringBehaviour
         public float MovementSpeed = 2;
         public float Radius = 1f;
 
-        [Range(0f, 5f)]
-        public float ClampMovement = 0.1f;
         public BehaviourContainer Behaviour;
         public SteeringAgent Target;
 
@@ -42,7 +40,6 @@ namespace Fyrvall.SteeringBehaviour
         [HideInInspector]
         public List<SteeringAgent> FriendlyAgents;
 
-        public bool IsStandStill() => CurrentMovementSpeed.magnitude < (ClampMovement * ClampMovement);
         public bool ActiveTarget() => Target?.isActiveAndEnabled ?? false;
 
         private void Start()
@@ -58,6 +55,18 @@ namespace Fyrvall.SteeringBehaviour
                 .Where(a => a != this)
                 .Where(a => a.Team == Team)
                 .ToList();
+
+            if(Behaviour == null) {
+                return;
+            }
+
+            foreach(var behaviour in Behaviour.Behaviours) {
+                if(behaviour == null) {
+                    continue;
+                }
+
+                behaviour.StartBehaviour(this);
+            }
         }
 
         private void FixedUpdate()
@@ -90,7 +99,7 @@ namespace Fyrvall.SteeringBehaviour
         {
             var movementDirection = GetMovementDirection();
 
-            if (movementDirection.sqrMagnitude < (ClampMovement * ClampMovement)) {
+            if (movementDirection.magnitude < (Behaviour?.ClampMovement ?? 0)) {
                 movementDirection = Vector3.zero;
             }
 
@@ -123,7 +132,7 @@ namespace Fyrvall.SteeringBehaviour
             TargetSteeringData.Reset();
 
             foreach (var behaviour in Behaviour.Behaviours) {
-                if (behaviour == null) {
+                if (behaviour == null || !behaviour.Enabled) {
                     continue;
                 }
 

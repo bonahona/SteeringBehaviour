@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7210753074968622777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309d6dec894b45a4392552909a23a10f, type: 3}
+  m_Name: MoveToTargetBehaviour
+  m_EditorClassIdentifier: 
+  Enabled: 1
+  ClosestDistance: 3
+  DesiredDistance: 8
+  ToDesiredDistancePriority: 1
+  FromClosestDistancePriority: 1
+  BackwardsFallof: 0.25
+  Priority: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fd7095fa563f04581865d8a62652db, type: 3}
+  m_Name: MoveToTargetOnly
+  m_EditorClassIdentifier: 
+  ClampMovement: 0.25
+  Behaviours:
+  - {fileID: -7210753074968622777}

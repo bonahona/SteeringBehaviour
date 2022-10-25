@@ -2,75 +2,33 @@ using UnityEngine;
 
 namespace Fyrvall.SteeringBehaviour
 {
-    public enum SteeringDirectionType : byte
-    {
-        None = 0,
-        North = 1,
-        NorthNorthEast = 2,
-        NorthEast = 3,
-        EastNorthEast = 4,
-        East = 5,
-        EastSouthEast = 6,
-        SouthEast = 7,
-        SouthSouthEast = 8,
-        South = 9,
-        SouthSouthWest = 10,
-        SouthWest = 11,
-        WestSouthWest = 12,
-        West = 13,
-        WestNorthWest = 14,
-        NorthWest = 15,
-        NorthNorthWest = 16
-    }
-
     public static class SteeringUtils
     {
-        public const int SteeringDirectionCount = 17;
+        public const int SteeringDirectionCount = 16;
 
         public static readonly Vector3[] SteeringDirection;
         public static int[] OppositeIndex;
 
         static SteeringUtils()
         {
-            SteeringDirection = new Vector3[] {
-                Vector3.zero,
-                Vector3.forward,
-                (Vector3.forward + Vector3.forward + Vector3.right).normalized,
-                (Vector3.forward + Vector3.right).normalized,
-                (Vector3.forward + Vector3.right + Vector3.right).normalized,
-                Vector3.right,
-                (Vector3.back + Vector3.right + Vector3.right).normalized,
-                (Vector3.back + Vector3.right).normalized,
-                (Vector3.back + Vector3.back + Vector3.right).normalized,
-                Vector3.back,
-                (Vector3.back + Vector3.back + Vector3.left).normalized,
-                (Vector3.back + Vector3.left).normalized,
-                (Vector3.back + Vector3.left + Vector3.left).normalized,
-                Vector3.left,
-                (Vector3.forward + Vector3.left + Vector3.left).normalized,
-                (Vector3.forward + Vector3.left).normalized,
-                (Vector3.forward + Vector3.forward + Vector3.left).normalized
-            };
+            var directionCount = SteeringDirectionCount;
+            if (directionCount % 2 == 1) {
+                Debug.LogWarning($"Direction count was uneven value {directionCount}, bumping to {directionCount + 1}");
+                directionCount += 1;
+            }
 
-            OppositeIndex = new int[] {
-                0,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8
-            };
+            SteeringDirection = new Vector3[directionCount + 1];     // Appends 1 for 0th index Vector.zero
+            OppositeIndex = new int[directionCount + 1];
+
+            SteeringDirection[directionCount] = Vector3.zero;
+            OppositeIndex[directionCount] = directionCount;
+
+            var stepRotation = 360f / directionCount;
+            var halfCount = Mathf.CeilToInt(directionCount / 2);
+            for (int i = 0; i < directionCount; i++) {
+                SteeringDirection[i] = Quaternion.Euler(0, stepRotation * i, 0) * Vector3.forward;
+                OppositeIndex[i] = Mathf.CeilToInt(Mathf.Repeat(i + halfCount, directionCount));
+            }
         }
     }
 }

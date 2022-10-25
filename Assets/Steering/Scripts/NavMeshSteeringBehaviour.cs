@@ -11,6 +11,14 @@ namespace Fyrvall.SteeringBehaviour
         public float FinishDistance = 0.1f;
         public float Priority = 1f;
 
+        [Header("Debug")]
+        public bool DebugPath = false;
+
+        public override void StartBehaviour(SteeringAgent agent)
+        {
+            agent.RepathTimer = Random.Range(0, RepathTimer);
+        }
+
         public override SteeringData UpdateBehaviour(SteeringAgent agent)
         {
             SteeringDataCache.Reset();
@@ -37,6 +45,12 @@ namespace Fyrvall.SteeringBehaviour
 
         private void Repath(SteeringAgent agent)
         {
+            var distanceToTarget = agent.Target.transform.position - agent.transform.position;
+            if(distanceToTarget.magnitude < DesiredDistance) {
+                agent.RepathTimer = RepathTimer;
+                return;
+            }
+
             if (NavMesh.CalculatePath(agent.transform.position, agent.Target.transform.position, int.MaxValue, agent.NavMeshPath)) {
                 agent.CurrentNavMeshPathIndex = 1;
             } else {
@@ -48,6 +62,10 @@ namespace Fyrvall.SteeringBehaviour
 
         private void DebugDrawPath(SteeringAgent agent)
         {
+            if(!DebugPath) {
+                return;
+            }
+
             for (int i = 1; i < agent.NavMeshPath.corners.Length; i++) {
                 if (agent.CurrentNavMeshPathIndex == i) {
                     Debug.DrawLine(agent.NavMeshPath.corners[i - 1], agent.NavMeshPath.corners[i], Color.green);

@@ -39,8 +39,9 @@ namespace Fyrvall.SteeringBehaviour
 
         public SteeringData()
         {
-            Directions = new DirectionData[SteeringUtils.SteeringDirectionCount];
-            for (int i = 0; i < SteeringUtils.SteeringDirectionCount; i++) { 
+            Directions = new DirectionData[SteeringUtils.SteeringDirection.Length];
+
+            for (int i = 0; i < SteeringUtils.SteeringDirection.Length; i++) { 
                 Directions[i] = new DirectionData {  Direction = SteeringUtils.SteeringDirection[i], MovementWeight = 0, OrientationWeight = 0 };
             }
         }
