@@ -31,7 +31,7 @@ namespace Fyrvall.SteeringBehaviour
             }
 
             var delta = (agent.Target.transform.position - agent.transform.position);
-            var distance = delta.magnitude;
+            var distance = Mathf.Max(delta.magnitude - (agent.Target.Radius + agent.Radius), 0);
             if (distance > DesiredDistance) {
                 return SteeringDataCache;
             }

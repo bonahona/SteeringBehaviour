@@ -7,6 +7,7 @@ namespace Fyrvall.SteeringBehaviour
     {
         public float ClosestDistance = 1f;
         public float DesiredDistance = 1f;
+        public float FarthestDistance = 10f;
 
         [Range(0, 5f)]
         public float ToDesiredDistancePriority = 1f;
@@ -16,6 +17,9 @@ namespace Fyrvall.SteeringBehaviour
 
         [Range(0f, 1f)]
         public float BackwardsFallof = 0f;
+
+        public bool UseRaycast = true;
+        public LayerMask GroundLayer;
 
         [Range (0f, 5f)]
         public float Priority = 1f;
@@ -28,21 +32,31 @@ namespace Fyrvall.SteeringBehaviour
             }
 
             var delta = (agent.Target.transform.position - agent.transform.position);
-            var distance = delta.magnitude;
+            var distance = Mathf.Max(delta.magnitude - (agent.Target.Radius + agent.Radius), 0);
+
+            if (UseRaycast && !LineOfSightToTarget(agent, delta, distance)) {
+                return SteeringDataCache;
+            }
+
             if (distance < ClosestDistance) {
-                var weight = 1f - delta.magnitude / ClosestDistance;
+                var weight = 1f - distance / ClosestDistance;
                 SteeringDataCache.MovementFromDirection(-delta.normalized, BackwardsFallof, weight * Priority * FromClosestDistancePriority);
                 SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority * FromClosestDistancePriority);
             } else if (distance < DesiredDistance) {
-                var weight = (delta.magnitude - ClosestDistance) / (DesiredDistance - ClosestDistance);
+                var weight = (distance - ClosestDistance) / (DesiredDistance - ClosestDistance);
                 SteeringDataCache.MovementFromDirection(delta.normalized, BackwardsFallof, weight * Priority);
                 SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority);
-            } else {
+            } else if(distance < FarthestDistance){
                 SteeringDataCache.MovementFromDirection(delta.normalized, BackwardsFallof, Priority * ToDesiredDistancePriority);
                 SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority * ToDesiredDistancePriority);
-            }
+            } 
 
             return SteeringDataCache;
+        }
+
+        private bool LineOfSightToTarget(SteeringAgent agent, Vector3 delta, float distance)
+        {
+            return !Physics.Raycast(agent.transform.position, delta, distance, GroundLayer.value);
         }
     }
 }

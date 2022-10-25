@@ -6,6 +6,7 @@ namespace Fyrvall.SteeringBehaviour
     [CreateAssetMenu(fileName = "NavMeshBehaviour", menuName = "Steering/Nav Mesh")]
     public class NavMeshSteeringBehaviour : SteeringBehaviourBase
     {
+        public float ClosestDistance = 1f;
         public float DesiredDistance = 10f;
         public float RepathTimer = 2f;
         public float FinishDistance = 0.1f;
@@ -85,9 +86,11 @@ namespace Fyrvall.SteeringBehaviour
                 agent.CurrentNavMeshPathIndex++;
             }
 
-            var totalDistance = TotalPathDistance(agent);
-            if (totalDistance < DesiredDistance) {
-                var weight = totalDistance / DesiredDistance;
+            var totalDistance = Mathf.Max(TotalPathDistance(agent) - agent.Radius);
+            if(totalDistance < ClosestDistance) {
+                return;
+            } else if (totalDistance < DesiredDistance) {
+                var weight = totalDistance / (DesiredDistance - ClosestDistance);
                 SteeringDataCache.MovementFromDirection(delta.normalized, 0f, weight * Priority);
                 SteeringDataCache.OrientationFromDirection(delta.normalized, 0f, weight * Priority);
             } else {
@@ -112,7 +115,6 @@ namespace Fyrvall.SteeringBehaviour
                 }
             }
 
-            Debug.Log(result);
             return result;
         }
     }

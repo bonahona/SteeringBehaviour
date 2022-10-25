@@ -17,11 +17,12 @@ namespace Fyrvall.SteeringBehaviour
             foreach (var friendlyAgent in agent.FriendlyAgents) {
                 var delta = friendlyAgent.transform.position - agent.transform.position;
 
-                if (delta.magnitude > DesiredDistance) {
+                var distance = Mathf.Max(delta.magnitude - (agent.Radius + friendlyAgent.Radius), 0f);
+                if (distance > DesiredDistance) {
                     continue;
                 }
 
-                var weight = 1f - (delta.magnitude / DesiredDistance);
+                var weight = 1f - (distance / DesiredDistance);
                 WorkCache.MovementFromDirection(-delta.normalized, 1f, weight * Priority);
                 WorkCache.OrientationFromDirection(-delta.normalized, 1f, weight * Priority);
                 SteeringDataCache.Apply(WorkCache);

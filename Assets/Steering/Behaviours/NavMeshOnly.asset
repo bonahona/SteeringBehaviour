@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: NavMeshSteeringBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
-  DesiredDistance: 1
-  RepathTimer: 2
+  ClosestDistance: 1
+  DesiredDistance: 10
+  RepathTimer: 1
   FinishDistance: 1
   Priority: 1
-  DebugPath: 0
+  DebugPath: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

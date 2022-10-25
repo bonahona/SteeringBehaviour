@@ -229,8 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseAgent: 1
   MovementSpeed: 10
-  Radius: 1
-  Behaviour: {fileID: 11400000, guid: 3cffe4513ee08174181dfcf0300600f9, type: 2}
+  Radius: 0.5
+  Behaviour: {fileID: 11400000, guid: 13207a2717d8f1944b311e200e863fcb, type: 2}
   Target: {fileID: 0}
   Team: 1
   Rigidbody: {fileID: 0}

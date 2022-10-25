@@ -144,11 +144,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UseAgent: 0
   MovementSpeed: 2
-  Radius: 1
-  ClampMovement: 0.1
-  SteeringBehaviours: []
+  Radius: 0.5
+  Behaviour: {fileID: 0}
   Target: {fileID: 0}
   Team: 0
+  Rigidbody: {fileID: 0}
   CurrentSteeringData:
     Directions:
     - Direction: {x: 0, y: 0, z: 0}
@@ -291,5 +291,7 @@ MonoBehaviour:
       MovementWeightCache: 0
   CurrentMovementSpeed: {x: 0, y: 0, z: 0}
   CurrentOrienttion: {x: 0, y: 0, z: 0}
+  CurrentNavMeshPathIndex: 0
+  RepathTimer: 0
   StartPosition: {x: 0, y: 0, z: 0}
   FriendlyAgents: []
