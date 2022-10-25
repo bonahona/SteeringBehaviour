@@ -230,7 +230,6 @@ MonoBehaviour:
   UseAgent: 1
   MovementSpeed: 10
   Radius: 1
-  ClampMovement: 0.5
   Behaviour: {fileID: 11400000, guid: 13207a2717d8f1944b311e200e863fcb, type: 2}
   Target: {fileID: 0}
   Team: 1
