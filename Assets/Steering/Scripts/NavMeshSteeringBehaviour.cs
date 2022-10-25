@@ -37,7 +37,7 @@ namespace Fyrvall.SteeringBehaviour
                 return SteeringDataCache;
             }
 
-            PathToNextCornet(agent);
+            PathToNextCorner(agent);
             DebugDrawPath(agent);
 
             return SteeringDataCache;
@@ -75,24 +75,45 @@ namespace Fyrvall.SteeringBehaviour
             }
         }
 
-        private void PathToNextCornet(SteeringAgent steeringAgent)
+        private void PathToNextCorner(SteeringAgent agent)
         {
-            var nextCorner = steeringAgent.NavMeshPath.corners[steeringAgent.CurrentNavMeshPathIndex];
-            var delta = nextCorner - steeringAgent.transform.position;
+            var nextCorner = agent.NavMeshPath.corners[agent.CurrentNavMeshPathIndex];
+            var delta = nextCorner - agent.transform.position;
 
             var distance = delta.magnitude;
             if (distance < FinishDistance) {
-                steeringAgent.CurrentNavMeshPathIndex++;
+                agent.CurrentNavMeshPathIndex++;
             }
 
-            if(distance < DesiredDistance) {
-                var weight = distance / DesiredDistance;
+            var totalDistance = TotalPathDistance(agent);
+            if (totalDistance < DesiredDistance) {
+                var weight = totalDistance / DesiredDistance;
                 SteeringDataCache.MovementFromDirection(delta.normalized, 0f, weight * Priority);
                 SteeringDataCache.OrientationFromDirection(delta.normalized, 0f, weight * Priority);
             } else {
                 SteeringDataCache.MovementFromDirection(delta.normalized, 0f, Priority);
                 SteeringDataCache.OrientationFromDirection(delta.normalized, 0f, Priority);
             }
+        }
+
+        private float TotalPathDistance(SteeringAgent agent)
+        {
+            var result = 0f;
+
+            if(agent.NavMeshPath.status != NavMeshPathStatus.PathComplete) {
+                return result;
+            }
+
+            for (int i = 1; i < agent.NavMeshPath.corners.Length; i++) {
+                if(agent.CurrentNavMeshPathIndex == i) {
+                    result += (agent.transform.position - agent.NavMeshPath.corners[i]).magnitude;
+                } else {
+                    result += (agent.NavMeshPath.corners[i - 1] - agent.NavMeshPath.corners[i]).magnitude;
+                }
+            }
+
+            Debug.Log(result);
+            return result;
         }
     }
 }
