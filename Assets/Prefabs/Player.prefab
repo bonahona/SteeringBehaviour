@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dede2bd52a1fc4ebb9a9bcb34a3775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 15
 --- !u!54 &4168182264255737325
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,7 +128,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &8136554271552871857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseAgent: 0
-  MovementSpeed: 2
+  MovementSpeed: 10
   Radius: 0.5
   Behaviour: {fileID: 0}
   Target: {fileID: 0}
@@ -289,6 +288,7 @@ MonoBehaviour:
       MovementWeight: 0
       OrientationWeight: 0
       MovementWeightCache: 0
+  TargetMovementSpeed: {x: 0, y: 0, z: 0}
   CurrentMovementSpeed: {x: 0, y: 0, z: 0}
   CurrentOrienttion: {x: 0, y: 0, z: 0}
   CurrentNavMeshPathIndex: 0

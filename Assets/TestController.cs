@@ -1,11 +1,17 @@
+using Fyrvall.SteeringBehaviour;
 using UnityEngine;
 
+[RequireComponent(typeof(SteeringAgent))]
 public class TestController : MonoBehaviour
 {
-    public float MovementSpeed = 10f;
-
-    private Vector3 CurrentMovementSpeed;
     private float TargetTimeScale = 1f;
+
+    private SteeringAgent SteeringAgent;
+
+    private void Start()
+    {
+        SteeringAgent = GetComponent<SteeringAgent>();
+    }
 
     private void Update()
     {
@@ -37,8 +43,6 @@ public class TestController : MonoBehaviour
             }
         }
 
-        CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, movementDirection * MovementSpeed, 0.1f);
-        transform.Translate(CurrentMovementSpeed * Time.deltaTime);
-
+        SteeringAgent.TargetMovementSpeed = movementDirection;
     }
 }

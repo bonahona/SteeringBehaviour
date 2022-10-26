@@ -214,7 +214,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &2767115137878917084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +366,7 @@ MonoBehaviour:
       MovementWeight: 0
       OrientationWeight: 0
       MovementWeightCache: 0
+  TargetMovementSpeed: {x: 0, y: 0, z: 0}
   CurrentMovementSpeed: {x: 0, y: 0, z: 0}
   CurrentOrienttion: {x: 0, y: 0, z: 0}
   CurrentNavMeshPathIndex: 0

@@ -24,6 +24,8 @@ namespace Fyrvall.SteeringBehaviour
         [HideInInspector]
         public SteeringData TargetSteeringData;
         [HideInInspector]
+        public Vector3 TargetMovementSpeed;
+        [HideInInspector]
         public Vector3 CurrentMovementSpeed;
         [HideInInspector]
         public Vector3 CurrentOrienttion;
@@ -71,41 +73,37 @@ namespace Fyrvall.SteeringBehaviour
 
         private void FixedUpdate()
         {
-            if(!UseAgent) {
-                return;
+            if (UseAgent) {
+                UpdateSteeringBehaviour();
+                UpdateAgentValues();
             }
 
-            UpdateSteeringBehaviour();
             MoveAgent();
         }
 
         private void UpdateSteeringBehaviour()
         {
-            if((Behaviour?.Behaviours.Count ?? 0) == 0) {
-                return;
-            }
-
             UpdateTargetDirections();
             UpdateCurrentDirections();
         }
 
-        private void MoveAgent()
+        private void UpdateAgentValues()
         {
+            if (!UseAgent) {
+                return;
+            }
+
             UpdateMovement();
             UpdateOritation();
         }
 
         private void UpdateMovement()
         {
-            var movementDirection = GetMovementDirection();
+            TargetMovementSpeed = GetMovementDirection();
 
-            if (movementDirection.magnitude < (Behaviour?.ClampMovement ?? 0)) {
-                movementDirection = Vector3.zero;
+            if (TargetMovementSpeed.magnitude < (Behaviour?.ClampMovement ?? 0)) {
+                TargetMovementSpeed = Vector3.zero;
             }
-
-            CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, movementDirection * MovementSpeed, 0.1f);
-
-            Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
         }
 
         private void UpdateOritation()
@@ -115,6 +113,12 @@ namespace Fyrvall.SteeringBehaviour
             if (CurrentOrienttion.sqrMagnitude > 0.1f) {
                 transform.rotation = Quaternion.LookRotation(CurrentOrienttion);
             }
+        }
+
+        private void MoveAgent()
+        {
+            CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, TargetMovementSpeed * MovementSpeed, 0.1f);
+            Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
         }
 
         private Vector3 GetMovementDirection()
