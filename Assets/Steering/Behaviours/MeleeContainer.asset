@@ -33,7 +33,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enabled: 1
   DesiredDistance: 3
-  Priority: 1
+  Priority: 2
 --- !u!114 &-4009586880123875161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   DesiredDistance: 8
   FarthestDistance: 20
   ToDesiredDistancePriority: 1
-  FromClosestDistancePriority: 1
+  FromClosestDistancePriority: 2
   BackwardsFallof: 0
   UseRaycast: 1
   GroundLayer:
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fd7095fa563f04581865d8a62652db, type: 3}
   m_Name: MeleeContainer
   m_EditorClassIdentifier: 
-  ClampMovement: 0.5
+  ClampMovement: 0
   Behaviours:
   - {fileID: -8502182634300574336}
   - {fileID: -4009586880123875161}

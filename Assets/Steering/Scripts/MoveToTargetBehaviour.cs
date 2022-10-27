@@ -32,7 +32,7 @@ namespace Fyrvall.SteeringBehaviour
             }
 
             var delta = (agent.Target.transform.position - agent.transform.position);
-            var distance = Mathf.Max(delta.magnitude - (agent.Target.Radius + agent.Radius), 0);
+            var distance = delta.magnitude;
 
             if (UseRaycast && !LineOfSightToTarget(agent, delta, distance)) {
                 return SteeringDataCache;

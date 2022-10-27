@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8136554271552871867}
   - component: {fileID: 4168182264255737325}
   - component: {fileID: 8136554271552871857}
+  - component: {fileID: -8307271164138803202}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -142,12 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UseAgent: 0
-  MovementSpeed: 10
-  Radius: 0.5
   Behaviour: {fileID: 0}
   Target: {fileID: 0}
   Team: 0
-  Rigidbody: {fileID: 0}
   CurrentSteeringData:
     Directions:
     - Direction: {x: 0, y: 0, z: 0}
@@ -289,9 +287,20 @@ MonoBehaviour:
       OrientationWeight: 0
       MovementWeightCache: 0
   TargetMovementSpeed: {x: 0, y: 0, z: 0}
-  CurrentMovementSpeed: {x: 0, y: 0, z: 0}
-  CurrentOrienttion: {x: 0, y: 0, z: 0}
   CurrentNavMeshPathIndex: 0
   RepathTimer: 0
   StartPosition: {x: 0, y: 0, z: 0}
   FriendlyAgents: []
+--- !u!114 &-8307271164138803202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422265034368425695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa2479fb8e42d548a83fde95b06a223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 14

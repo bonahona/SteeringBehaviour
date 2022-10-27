@@ -10,6 +10,13 @@ namespace Fyrvall.SteeringBehaviour
         [Range(0f, 5f)]
         public float Priority = 1f;
 
+        private float DesiredDistanceSquare;
+
+        public override void StartBehaviour(SteeringAgent agent)
+        {
+            DesiredDistanceSquare = DesiredDistance * DesiredDistance;
+        }
+
         public override SteeringData UpdateBehaviour(SteeringAgent agent)
         {
             SteeringDataCache.Reset();
@@ -17,11 +24,12 @@ namespace Fyrvall.SteeringBehaviour
             foreach (var friendlyAgent in agent.FriendlyAgents) {
                 var delta = friendlyAgent.transform.position - agent.transform.position;
 
-                var distance = Mathf.Max(delta.magnitude - (agent.Radius + friendlyAgent.Radius), 0f);
-                if (distance > DesiredDistance) {
+
+                if (delta.sqrMagnitude > DesiredDistanceSquare) {
                     continue;
                 }
 
+                var distance = delta.magnitude;
                 var weight = 1f - (distance / DesiredDistance);
                 WorkCache.MovementFromDirection(-delta.normalized, 1f, weight * Priority);
                 WorkCache.OrientationFromDirection(-delta.normalized, 1f, weight * Priority);

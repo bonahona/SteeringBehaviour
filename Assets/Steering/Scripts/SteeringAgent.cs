@@ -1,16 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.AI;
 
 namespace Fyrvall.SteeringBehaviour
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(SteeringMovementBase))]
     public class SteeringAgent : MonoBehaviour
     {
         public bool UseAgent = true;        // Reserved for players
-        public float MovementSpeed = 2;
-        public float Radius = 1f;
 
         public BehaviourContainer Behaviour;
         public SteeringAgent Target;
@@ -18,23 +15,15 @@ namespace Fyrvall.SteeringBehaviour
         public TeamType Team;
 
         [HideInInspector]
-        public Rigidbody Rigidbody;
-        [HideInInspector]
         public SteeringData CurrentSteeringData;
         [HideInInspector]
         public SteeringData TargetSteeringData;
         [HideInInspector]
         public Vector3 TargetMovementSpeed;
         [HideInInspector]
-        public Vector3 CurrentMovementSpeed;
+        public Vector3 TargetOrientation;
         [HideInInspector]
-        public Vector3 CurrentOrienttion;
-        [HideInInspector]
-        public NavMeshPath NavMeshPath;
-        [HideInInspector]
-        public int CurrentNavMeshPathIndex = 0;
-        [HideInInspector]
-        public float RepathTimer = 0f;
+        public NavMeshSteeringData NavMeshSteeringData;
 
         [HideInInspector]
         public Vector3 StartPosition;
@@ -42,16 +31,19 @@ namespace Fyrvall.SteeringBehaviour
         [HideInInspector]
         public List<SteeringAgent> FriendlyAgents;
 
+        private SteeringMovementBase Movement;
+
         public bool ActiveTarget() => Target?.isActiveAndEnabled ?? false;
 
         private void Start()
         {
-            Rigidbody = GetComponent<Rigidbody>();
+            Movement = GetComponent<SteeringMovementBase>();
+
             StartPosition = transform.position;
             CurrentSteeringData = new SteeringData();
             TargetSteeringData = new SteeringData();
 
-            NavMeshPath = new NavMeshPath();
+            NavMeshSteeringData = new NavMeshSteeringData();
 
             FriendlyAgents = FindObjectsOfType<SteeringAgent>()
                 .Where(a => a != this)
@@ -78,7 +70,8 @@ namespace Fyrvall.SteeringBehaviour
                 UpdateAgentValues();
             }
 
-            MoveAgent();
+            Movement.MoveAgent(TargetMovementSpeed);
+            Movement.OrientAgent(TargetOrientation);
         }
 
         private void UpdateSteeringBehaviour()
@@ -108,17 +101,7 @@ namespace Fyrvall.SteeringBehaviour
 
         private void UpdateOritation()
         {
-            var orientationDirection = GetOrientationDirection();
-            CurrentOrienttion = Vector3.Slerp(CurrentOrienttion, orientationDirection, 0.1f);
-            if (CurrentOrienttion.sqrMagnitude > 0.1f) {
-                transform.rotation = Quaternion.LookRotation(CurrentOrienttion);
-            }
-        }
-
-        private void MoveAgent()
-        {
-            CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, TargetMovementSpeed * MovementSpeed, 0.1f);
-            Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
+            TargetOrientation = GetOrientationDirection();          
         }
 
         private Vector3 GetMovementDirection()
