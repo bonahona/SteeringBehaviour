@@ -18,7 +18,6 @@ MonoBehaviour:
   RepathTimer: 1
   FinishDistance: 1
   Priority: 2
-  DebugPath: 1
 --- !u!114 &-6031476595039695585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,7 +31,7 @@ MonoBehaviour:
   m_Name: AvoidTeamsSteeringBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
-  DesiredDistance: 3
+  DesiredDistance: 5
   Priority: 2
 --- !u!114 &-4009586880123875161
 MonoBehaviour:
@@ -47,8 +46,8 @@ MonoBehaviour:
   m_Name: MoveToTargetBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
-  ClosestDistance: 3
-  DesiredDistance: 8
+  ClosestDistance: 5
+  DesiredDistance: 10
   FarthestDistance: 20
   ToDesiredDistancePriority: 1
   FromClosestDistancePriority: 2

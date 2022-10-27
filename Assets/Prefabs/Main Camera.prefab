@@ -99,5 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   Angle: 60
-  Distance: 25
+  Distance: 35
   DistanceVector: {x: 0, y: 0, z: 0}
