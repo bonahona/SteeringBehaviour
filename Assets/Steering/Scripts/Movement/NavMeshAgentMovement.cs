@@ -6,8 +6,8 @@ namespace Fyrvall.SteeringBehaviour.Movement
     [RequireComponent(typeof(NavMeshAgent))]
     public class NavMeshAgentMovement : SteeringMovementBase
     {
-        public float MovementSpeed = 2;
-
+        public float MovementSpeed = 10;
+        public float Acceleration = 50;
 
         private NavMeshAgent NavMeshAgent;
         private SteeringAgent Agent;
@@ -31,7 +31,7 @@ namespace Fyrvall.SteeringBehaviour.Movement
 
         public override void MoveAgent(Vector3 targetMovementDirection)
         {
-            CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, targetMovementDirection * MovementSpeed, 0.1f);
+            CurrentMovementSpeed = Vector3.MoveTowards(CurrentMovementSpeed, targetMovementDirection * MovementSpeed, Acceleration * Time.deltaTime);
             NavMeshAgent.Move(CurrentMovementSpeed * Time.fixedDeltaTime);
         }
 

@@ -1181,6 +1181,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2372252617073630875, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
+      propertyPath: Acceleration
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2767115137878917025, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
       propertyPath: m_Name
       value: RigidbodyAgent
@@ -1235,25 +1239,6 @@ PrefabInstance:
       objectReference: {fileID: 12}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
---- !u!1 &1196746863 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2767115137878917025, guid: e258cdce9a93ed04b89bca228d07ff3e, type: 3}
-  m_PrefabInstance: {fileID: 879457262}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1196746872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196746863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59af08afc8db8364f81bafd725942133, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FrameData: []
-  CurrentIndex: 0
 --- !u!1 &1272743678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,6 +1639,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8307271164138803202, guid: 58a5d8577e7d85c4e89c1474410f4b03, type: 3}
+      propertyPath: Acceleration
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1422265034368425695, guid: 58a5d8577e7d85c4e89c1474410f4b03, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1701,14 +1690,6 @@ PrefabInstance:
     - target: {fileID: 3184431912627338798, guid: 58a5d8577e7d85c4e89c1474410f4b03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4168182264255737325, guid: 58a5d8577e7d85c4e89c1474410f4b03, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8136554271552871857, guid: 58a5d8577e7d85c4e89c1474410f4b03, type: 3}
-      propertyPath: MovementSpeed
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a5d8577e7d85c4e89c1474410f4b03, type: 3}
