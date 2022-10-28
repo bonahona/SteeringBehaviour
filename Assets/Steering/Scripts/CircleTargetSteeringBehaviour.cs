@@ -24,7 +24,7 @@ namespace Fyrvall.SteeringBehaviour
 
         public DirectionType Direction = DirectionType.Left;
 
-        public override SteeringData UpdateBehaviour(SteeringAgent agent)
+        public override SteeringData UpdateBehaviour(SteeringAgent agent, float deltaTime)
         {
             SteeringDataCache.Reset();
             if (!agent.ActiveTarget()) {

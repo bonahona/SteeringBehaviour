@@ -8,13 +8,25 @@ namespace Fyrvall.SteeringBehaviour.Movement
     {
         public float MovementSpeed = 2;
 
+
         private NavMeshAgent NavMeshAgent;
+        private SteeringAgent Agent;
+
         private Vector3 CurrentMovementSpeed;
         private Vector3 CurrentOrienttion;
 
         private void Start()
         {
             NavMeshAgent = GetComponent<NavMeshAgent>();
+            Agent = GetComponent<SteeringAgent>();
+            if(Agent == null) {
+                Debug.LogError($"{name} has a {nameof(SteeringBehaviourBase)} component but missing a {nameof(SteeringAgent)}");
+            }
+        }
+
+        private void Update()
+        {
+            Agent.UpdateAgent(Time.deltaTime);
         }
 
         public override void MoveAgent(Vector3 targetMovementDirection)

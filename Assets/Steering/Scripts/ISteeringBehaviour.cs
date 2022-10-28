@@ -14,6 +14,6 @@ namespace Fyrvall.SteeringBehaviour
         public int Index;
 
         public virtual void StartBehaviour(SteeringAgent agent) { }
-        public abstract SteeringData UpdateBehaviour(SteeringAgent agent);
+        public abstract SteeringData UpdateBehaviour(SteeringAgent agent, float deltaTime);
     }
 }

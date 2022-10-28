@@ -63,10 +63,10 @@ namespace Fyrvall.SteeringBehaviour
             }
         }
 
-        private void FixedUpdate()
+        public void UpdateAgent(float deltaTime)
         {
             if (UseAgent) {
-                UpdateSteeringBehaviour();
+                UpdateSteeringBehaviour(deltaTime);
                 UpdateAgentValues();
             }
 
@@ -74,9 +74,9 @@ namespace Fyrvall.SteeringBehaviour
             Movement.OrientAgent(TargetOrientation);
         }
 
-        private void UpdateSteeringBehaviour()
+        private void UpdateSteeringBehaviour(float deltaTime)
         {
-            UpdateTargetDirections();
+            UpdateTargetDirections(deltaTime);
             UpdateCurrentDirections();
         }
 
@@ -114,7 +114,7 @@ namespace Fyrvall.SteeringBehaviour
             return CurrentSteeringData.OrientationMax().CappedOrientationDirection();
         }
 
-        private void UpdateTargetDirections()
+        private void UpdateTargetDirections(float deltaTime)
         {
             TargetSteeringData.Reset();
 
@@ -123,7 +123,7 @@ namespace Fyrvall.SteeringBehaviour
                     continue;
                 }
 
-                var steeringData = behaviour.UpdateBehaviour(this);
+                var steeringData = behaviour.UpdateBehaviour(this, deltaTime);
 
                 for (int i = 0; i < steeringData.Directions.Length; i++) {
                     TargetSteeringData.Directions[i].MovementWeight += steeringData.Directions[i].MovementWeight;

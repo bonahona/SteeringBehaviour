@@ -17,7 +17,7 @@ namespace Fyrvall.SteeringBehaviour
             agent.NavMeshSteeringData.RepathTimer = Random.Range(0, RepathTimer);
         }
 
-        public override SteeringData UpdateBehaviour(SteeringAgent agent)
+        public override SteeringData UpdateBehaviour(SteeringAgent agent, float deltaTime)
         {
             SteeringDataCache.Reset();
 
@@ -29,7 +29,7 @@ namespace Fyrvall.SteeringBehaviour
                 Repath(agent);
             }
 
-            agent.NavMeshSteeringData.RepathTimer -= Time.fixedDeltaTime;
+            agent.NavMeshSteeringData.RepathTimer -= deltaTime;
 
             if(!agent.NavMeshSteeringData.CanUsePath()) {
                 return SteeringDataCache;

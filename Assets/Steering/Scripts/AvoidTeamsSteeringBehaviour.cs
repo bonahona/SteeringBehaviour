@@ -18,7 +18,7 @@ namespace Fyrvall.SteeringBehaviour
             DesiredDistanceSquare = DesiredDistance * DesiredDistance;
         }
 
-        public override SteeringData UpdateBehaviour(SteeringAgent agent)
+        public override SteeringData UpdateBehaviour(SteeringAgent agent, float deltaTime)
         {
             SteeringDataCache.Reset();
 
