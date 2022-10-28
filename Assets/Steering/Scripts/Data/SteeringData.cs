@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Fyrvall.SteeringBehaviour
+namespace Fyrvall.SteeringBehaviour.Data
 {
     [System.Serializable]
     public class DirectionData
@@ -105,7 +105,6 @@ namespace Fyrvall.SteeringBehaviour
                     dot = 0;
                 }
 
-                Debug.DrawLine(impactPosition, impactPosition + dot * direction.Direction, Color.blue);
                 direction.MovementWeight = dot * weight;
             }
         }
@@ -133,6 +132,14 @@ namespace Fyrvall.SteeringBehaviour
             for (int i = 0; i < Directions.Length; i++) {
                 Directions[i].MovementWeight += other.Directions[i].MovementWeight;
                 Directions[i].OrientationWeight += other.Directions[i].OrientationWeight;
+            }
+        }
+
+        public void Copy(SteeringData other)
+        {
+            for (int i = 0; i < Directions.Length; i++) {
+                Directions[i].MovementWeight = other.Directions[i].MovementWeight;
+                Directions[i].OrientationWeight = other.Directions[i].OrientationWeight;
             }
         }
 

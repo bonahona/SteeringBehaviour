@@ -53,6 +53,11 @@ namespace Fyrvall.SteeringBehaviour {
                     AddBehaviour(SelectedIndex, container);
                 }
             }
+
+            if(GUILayout.Button("Update indices")) {
+                container.UpdateBehaviourIndices();
+                EditorUtility.SetDirty(target);
+            }
         }
 
         private void ListBehaviours(BehaviourContainer container)
@@ -78,6 +83,9 @@ namespace Fyrvall.SteeringBehaviour {
             var behaviour = ScriptableObject.CreateInstance(behaviourType) as SteeringBehaviourBase;
             behaviour.name = behaviourType.Name;
             container.Behaviours.Add(behaviour);
+
+            container.UpdateBehaviourIndices();
+
             SubEditors.Add(Editor.CreateEditor(behaviour));
             AssetDatabase.AddObjectToAsset(behaviour, target);
 
@@ -93,6 +101,8 @@ namespace Fyrvall.SteeringBehaviour {
             var behaviour = container.Behaviours[index];
             AssetDatabase.RemoveObjectFromAsset(behaviour);
             container.Behaviours.RemoveAt(index);
+
+            container.UpdateBehaviourIndices();
 
             EditorUtility.SetDirty(target);
             AssetDatabase.SaveAssets();

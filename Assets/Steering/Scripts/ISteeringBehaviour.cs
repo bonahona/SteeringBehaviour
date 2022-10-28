@@ -1,3 +1,4 @@
+using Fyrvall.SteeringBehaviour.Data;
 using UnityEngine;
 
 namespace Fyrvall.SteeringBehaviour
@@ -8,6 +9,9 @@ namespace Fyrvall.SteeringBehaviour
         protected static readonly SteeringData WorkCache = new SteeringData();
 
         public bool Enabled = true;
+
+        [HideInInspector]
+        public int Index;
 
         public virtual void StartBehaviour(SteeringAgent agent) { }
         public abstract SteeringData UpdateBehaviour(SteeringAgent agent);

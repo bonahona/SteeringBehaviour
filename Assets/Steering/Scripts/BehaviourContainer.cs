@@ -12,5 +12,12 @@ namespace Fyrvall.SteeringBehaviour
 
         [HideInInspector]
         public List<SteeringBehaviourBase> Behaviours = new List<SteeringBehaviourBase>();
+
+        public void UpdateBehaviourIndices()
+        {
+            for(int i = 0; i < Behaviours.Count; i++) {
+                Behaviours[i].Index = i;
+            }
+        }
     }
 }

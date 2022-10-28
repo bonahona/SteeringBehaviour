@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Fyrvall.SteeringBehaviour.Movement;
+using Fyrvall.SteeringBehaviour.Data;
 
 namespace Fyrvall.SteeringBehaviour
 {
@@ -11,25 +13,22 @@ namespace Fyrvall.SteeringBehaviour
 
         public BehaviourContainer Behaviour;
         public SteeringAgent Target;
-
         public TeamType Team;
 
-        [HideInInspector]
-        public SteeringData CurrentSteeringData;
-        [HideInInspector]
-        public SteeringData TargetSteeringData;
         [HideInInspector]
         public Vector3 TargetMovementSpeed;
         [HideInInspector]
         public Vector3 TargetOrientation;
         [HideInInspector]
         public NavMeshSteeringData NavMeshSteeringData;
-
         [HideInInspector]
         public Vector3 StartPosition;
-
         [HideInInspector]
         public List<SteeringAgent> FriendlyAgents;
+
+        private SteeringData CurrentSteeringData;
+        private SteeringData TargetSteeringData;
+        private SteeringFrameData SteeringFrameData;
 
         private SteeringMovementBase Movement;
 
@@ -42,6 +41,7 @@ namespace Fyrvall.SteeringBehaviour
             StartPosition = transform.position;
             CurrentSteeringData = new SteeringData();
             TargetSteeringData = new SteeringData();
+            SteeringFrameData = new SteeringFrameData(Behaviour);
 
             NavMeshSteeringData = new NavMeshSteeringData();
 
@@ -129,6 +129,8 @@ namespace Fyrvall.SteeringBehaviour
                     TargetSteeringData.Directions[i].MovementWeight += steeringData.Directions[i].MovementWeight;
                     TargetSteeringData.Directions[i].OrientationWeight += steeringData.Directions[i].OrientationWeight;
                 }
+
+                SteeringFrameData.RegisterSteeringData(behaviour, steeringData);
             }
 
             TargetSteeringData.BalanceMovement();
@@ -156,6 +158,11 @@ namespace Fyrvall.SteeringBehaviour
                     Debug.DrawLine(startPosition, startPosition + direction.Direction * Mathf.Abs(direction.MovementWeight), Color.red);
                 }
             }
+        }
+
+        public void CopyFrameData(SteeringFrameData other)
+        {
+            SteeringFrameData.Copy(other);
         }
     }
 }

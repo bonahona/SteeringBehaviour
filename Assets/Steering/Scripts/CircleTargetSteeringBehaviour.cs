@@ -1,3 +1,4 @@
+using Fyrvall.SteeringBehaviour.Data;
 using UnityEngine;
 
 namespace Fyrvall.SteeringBehaviour

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Fyrvall.SteeringBehaviour
+namespace Fyrvall.SteeringBehaviour.Data
 {
     public class NavMeshSteeringData
     {

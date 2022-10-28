@@ -13,11 +13,17 @@ MonoBehaviour:
   m_Name: MoveToTargetBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  Index: 0
   ClosestDistance: 3
   DesiredDistance: 8
+  FarthestDistance: 10
   ToDesiredDistancePriority: 1
   FromClosestDistancePriority: 1
   BackwardsFallof: 0.25
+  UseRaycast: 1
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   Priority: 1
 --- !u!114 &11400000
 MonoBehaviour:

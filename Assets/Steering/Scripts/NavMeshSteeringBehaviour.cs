@@ -1,5 +1,5 @@
+using Fyrvall.SteeringBehaviour.Data;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Fyrvall.SteeringBehaviour
 {

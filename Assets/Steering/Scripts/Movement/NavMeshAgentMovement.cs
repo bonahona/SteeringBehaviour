@@ -1,25 +1,26 @@
 using UnityEngine;
+using UnityEngine.AI;
 
-namespace Fyrvall.SteeringBehaviour
+namespace Fyrvall.SteeringBehaviour.Movement
 {
-    [RequireComponent(typeof(Rigidbody))]
-    public class RigidbodyMovement : SteeringMovementBase
+    [RequireComponent(typeof(NavMeshAgent))]
+    public class NavMeshAgentMovement : SteeringMovementBase
     {
         public float MovementSpeed = 2;
 
-        private Rigidbody Rigidbody;
+        private NavMeshAgent NavMeshAgent;
         private Vector3 CurrentMovementSpeed;
         private Vector3 CurrentOrienttion;
 
-        void Start()
+        private void Start()
         {
-            Rigidbody = GetComponent<Rigidbody>();
+            NavMeshAgent = GetComponent<NavMeshAgent>();
         }
 
         public override void MoveAgent(Vector3 targetMovementDirection)
         {
             CurrentMovementSpeed = Vector3.Lerp(CurrentMovementSpeed, targetMovementDirection * MovementSpeed, 0.1f);
-            Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
+            NavMeshAgent.Move(CurrentMovementSpeed * Time.fixedDeltaTime);
         }
 
         public override void OrientAgent(Vector3 targetOrientationDirection)
@@ -29,6 +30,5 @@ namespace Fyrvall.SteeringBehaviour
                 transform.rotation = Quaternion.LookRotation(CurrentOrienttion);
             }
         }
-
     }
 }

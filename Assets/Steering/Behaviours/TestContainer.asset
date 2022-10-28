@@ -13,11 +13,17 @@ MonoBehaviour:
   m_Name: MoveToTargetBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  Index: 0
   ClosestDistance: 10
   DesiredDistance: 10
+  FarthestDistance: 10
   ToDesiredDistancePriority: 1
   FromClosestDistancePriority: 1
   BackwardsFallof: 1
+  UseRaycast: 1
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   Priority: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -49,11 +55,12 @@ MonoBehaviour:
   m_Name: NavMeshSteeringBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  Index: 2
+  ClosestDistance: 1
   DesiredDistance: 10
   RepathTimer: 1
   FinishDistance: 1
   Priority: 3
-  DebugPath: 1
 --- !u!114 &7380362648303844132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,5 +74,6 @@ MonoBehaviour:
   m_Name: AvoidTeamsSteeringBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  Index: 1
   DesiredDistance: 3
   Priority: 5

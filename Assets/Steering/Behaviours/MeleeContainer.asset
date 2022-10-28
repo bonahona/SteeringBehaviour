@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: NavMeshSteeringBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
-  ClosestDistance: 10
+  Index: 0
+  ClosestDistance: 5
   DesiredDistance: 10
   RepathTimer: 1
   FinishDistance: 1
@@ -31,6 +32,7 @@ MonoBehaviour:
   m_Name: AvoidTeamsSteeringBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  Index: 2
   DesiredDistance: 5
   Priority: 2
 --- !u!114 &-4009586880123875161
@@ -46,6 +48,7 @@ MonoBehaviour:
   m_Name: MoveToTargetBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  Index: 1
   ClosestDistance: 5
   DesiredDistance: 10
   FarthestDistance: 20

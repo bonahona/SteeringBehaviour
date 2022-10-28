@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Fyrvall.SteeringBehaviour
+namespace Fyrvall.SteeringBehaviour.Movement
 {
     public abstract class SteeringMovementBase : MonoBehaviour
     {

@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1828232484}
   - component: {fileID: 2372252617073630875}
   m_Layer: 0
-  m_Name: AgentMelee01
+  m_Name: RigidbodyAgent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
