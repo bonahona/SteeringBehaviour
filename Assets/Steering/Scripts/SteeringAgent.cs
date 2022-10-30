@@ -38,6 +38,8 @@ namespace Fyrvall.SteeringBehaviour
         {
             Movement = GetComponent<SteeringMovementBase>();
 
+            TargetOrientation = transform.forward;
+
             StartPosition = transform.position;
             CurrentSteeringData = new SteeringData();
             TargetSteeringData = new SteeringData();
@@ -92,10 +94,7 @@ namespace Fyrvall.SteeringBehaviour
                 TargetMovementSpeed = Vector3.zero;
             }
 
-            var nextOrientation = GetOrientationDirection();
-            if (Vector3.Dot(TargetOrientation, nextOrientation) > Behaviour.ClampRotation) {
-                TargetOrientation = nextOrientation;
-            }
+            TargetOrientation = GetOrientationDirection();
         }
 
         private Vector3 GetMovementDirection()
@@ -105,7 +104,13 @@ namespace Fyrvall.SteeringBehaviour
 
         private Vector3 GetOrientationDirection()
         {
-            return CurrentSteeringData.OrientationMax().CappedOrientationDirection();
+            var result = CurrentSteeringData.OrientationMax();
+
+            if (result.OrientationWeight < Behaviour.ClampMovement) {
+                return TargetOrientation;
+            } else {
+                return result.Direction;
+            }
         }
 
         private void UpdateTargetDirections(float deltaTime)

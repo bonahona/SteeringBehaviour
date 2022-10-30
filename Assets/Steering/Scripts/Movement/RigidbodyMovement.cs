@@ -9,6 +9,7 @@ namespace Fyrvall.SteeringBehaviour.Movement
 
         void Start()
         {
+            CurrentOriention = transform.forward;
             Agent = GetComponent<SteeringAgent>();
             if (Agent == null) {
                 Debug.LogError($"{name} has a {nameof(SteeringBehaviourBase)} component but missing a {nameof(SteeringAgent)}");
@@ -31,10 +32,7 @@ namespace Fyrvall.SteeringBehaviour.Movement
         public override void OrientAgent(Vector3 targetOrientationDirection)
         {
             CurrentOriention = Vector3.RotateTowards(CurrentOriention, targetOrientationDirection, RotationSpeed * Time.fixedDeltaTime, 0f);
-            if (CurrentOriention.sqrMagnitude > 0.1f) {
-                transform.rotation = Quaternion.LookRotation(CurrentOriention);
-            }
+            transform.rotation = Quaternion.LookRotation(CurrentOriention);
         }
-
     }
 }

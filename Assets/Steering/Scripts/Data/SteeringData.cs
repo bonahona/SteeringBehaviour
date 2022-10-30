@@ -20,15 +20,6 @@ namespace Fyrvall.SteeringBehaviour.Data
             }
         }
 
-        public Vector3 CappedOrientationDirection()
-        {
-            if (OrientationWeight < 1f) {
-                return Direction * OrientationWeight;
-            } else {
-                return Direction;
-            }
-        }
-
         public override string ToString() => $"{Direction} - M:{MovementWeight} - O:{OrientationWeight}";
     }
 

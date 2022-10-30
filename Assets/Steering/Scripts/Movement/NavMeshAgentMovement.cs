@@ -10,6 +10,7 @@ namespace Fyrvall.SteeringBehaviour.Movement
 
         private void Start()
         {
+            CurrentOriention = transform.forward;
             NavMeshAgent = GetComponent<NavMeshAgent>();
             Agent = GetComponent<SteeringAgent>();
             if(Agent == null) {
