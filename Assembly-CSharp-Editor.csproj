@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Steering\Scripts\Editor\BehaviourContainerEditor.cs" />
-    <Compile Include="Assets\Steering\Scripts\Editor\SteeringAgentDebuggerEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
