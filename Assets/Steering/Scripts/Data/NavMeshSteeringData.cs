@@ -7,7 +7,7 @@ namespace Fyrvall.SteeringBehaviour.Data
     public class NavMeshSteeringData
     {
         public bool HasPath = false;
-        public int CurrentNavMeshPathIndex = 0;
+        public int NextNavMeshPathIndex = 0;
         public float RepathTimer = 0f;
 
         public NavMeshPath NavMeshPath = new NavMeshPath();
@@ -23,7 +23,7 @@ namespace Fyrvall.SteeringBehaviour.Data
                 return false;
             }
 
-            if(CurrentNavMeshPathIndex >= NavMeshPath.corners.Length) {
+            if(NextNavMeshPathIndex >= NavMeshPath.corners.Length) {
                 return false;
             }
 
@@ -40,7 +40,7 @@ namespace Fyrvall.SteeringBehaviour.Data
                 HasPath = false;
             }
 
-            CurrentNavMeshPathIndex = 0;
+            NextNavMeshPathIndex = 0;
 
             HasPath = true;
             SegmentLengthCache.Clear();
@@ -50,7 +50,7 @@ namespace Fyrvall.SteeringBehaviour.Data
             }
         }
 
-        public float GetTotalPathDistance(SteeringAgent agent)
+        public float GetTotalPathDistanceLeft(SteeringAgent agent)
         {
             var result = 0f;
 
@@ -59,8 +59,10 @@ namespace Fyrvall.SteeringBehaviour.Data
             }
 
             for (int i = 0; i < NavMeshPath.corners.Length -1; i++) {
-                if (CurrentNavMeshPathIndex == i) {
-                    result += (agent.transform.position - NavMeshPath.corners[i]).magnitude;
+                if(i < agent.NavMeshSteeringData.NextNavMeshPathIndex) { 
+                    if(i + 1 == agent.NavMeshSteeringData.NextNavMeshPathIndex) {
+                        result += (agent.transform.position - NavMeshPath.corners[i +1]).magnitude;
+                    }
                 } else {
                     result += SegmentLengthCache[i];
                 }

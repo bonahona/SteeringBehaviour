@@ -12,8 +12,16 @@ namespace Fyrvall.SteeringBehaviour
         public float FinishDistance = 0.1f;
         public float Priority = 1f;
 
+        private float ClosestDistanceSqr;
+        private float FinishDistanceSqr;
+        private float DesiredDistanceSqr;
+
         public override void StartBehaviour(SteeringAgent agent)
         {
+            ClosestDistanceSqr = ClosestDistance * ClosestDistance;
+            FinishDistanceSqr = FinishDistance * FinishDistance;
+            DesiredDistanceSqr = DesiredDistance * DesiredDistance;
+
             agent.NavMeshSteeringData.RepathTimer = Random.Range(0, RepathTimer);
         }
 
@@ -43,27 +51,26 @@ namespace Fyrvall.SteeringBehaviour
         private void Repath(SteeringAgent agent)
         {
             var distanceToTarget = agent.Target.transform.position - agent.transform.position;
-            if(distanceToTarget.magnitude < DesiredDistance) {
+            if(distanceToTarget.sqrMagnitude < ClosestDistanceSqr) {
                 agent.NavMeshSteeringData.SetRepathTimer(RepathTimer);
                 return;
             }
 
             agent.NavMeshSteeringData.Repath(agent.transform.position, agent.Target.transform.position);
-
             agent.NavMeshSteeringData.SetRepathTimer(RepathTimer);
         }
 
         private void PathToNextCorner(SteeringAgent agent)
         {
-            var nextCorner = agent.NavMeshSteeringData.NavMeshPath.corners[agent.NavMeshSteeringData.CurrentNavMeshPathIndex];
+            var nextCorner = agent.NavMeshSteeringData.NavMeshPath.corners[agent.NavMeshSteeringData.NextNavMeshPathIndex];
             var delta = nextCorner - agent.transform.position;
 
-            var distance = delta.magnitude;
-            if (distance < FinishDistance) {
-                agent.NavMeshSteeringData.CurrentNavMeshPathIndex++;
+            if (delta.sqrMagnitude < FinishDistanceSqr) {
+                agent.NavMeshSteeringData.NextNavMeshPathIndex++;
             }
 
-            var totalDistance = agent.NavMeshSteeringData.GetTotalPathDistance(agent);
+            var totalDistance = agent.NavMeshSteeringData.GetTotalPathDistanceLeft(agent);
+
             if(totalDistance < ClosestDistance) {
                 return;
             } else if (totalDistance < DesiredDistance) {
@@ -94,7 +101,7 @@ namespace Fyrvall.SteeringBehaviour
             }
 
             var corners = agent.NavMeshSteeringData.NavMeshPath.corners;
-            var distanceRemaining = agent.NavMeshSteeringData.GetTotalPathDistance(agent);
+            //var distanceRemaining = agent.NavMeshSteeringData.GetTotalPathDistanceLeft(agent);
             for(int i = 0; i < corners.Length -1; i ++) {
                 Debug.DrawLine(corners[i], corners[i + 1], Color.yellow);
             }

@@ -5,6 +5,7 @@ namespace Fyrvall.SteeringBehaviour
     public static class SteeringUtils
     {
         public const int SteeringDirectionCount = 16;
+        public const int DefaultSteeringIndex = SteeringDirectionCount - 1;
 
         public static readonly Vector3[] SteeringDirection;
         public static int[] OppositeIndex;

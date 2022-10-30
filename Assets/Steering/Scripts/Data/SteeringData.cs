@@ -48,7 +48,7 @@ namespace Fyrvall.SteeringBehaviour.Data
 
         public DirectionData MovementMax()
         {
-            var resultIndex = 0;
+            var resultIndex = SteeringUtils.DefaultSteeringIndex;
 
             for(int i = 0; i < Directions.Length; i ++) {
                 if(Directions[i].MovementWeight > Directions[resultIndex].MovementWeight) {
