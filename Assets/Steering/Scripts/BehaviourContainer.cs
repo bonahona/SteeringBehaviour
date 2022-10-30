@@ -10,6 +10,9 @@ namespace Fyrvall.SteeringBehaviour
         [Range(0f, 5f)]
         public float ClampMovement = 0.1f;
 
+        [Range(0f, 5f)]
+        public float ClampRotation = 0.1f;
+
         [HideInInspector]
         public List<SteeringBehaviourBase> Behaviours = new List<SteeringBehaviourBase>();
 

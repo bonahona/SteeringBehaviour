@@ -6,14 +6,7 @@ namespace Fyrvall.SteeringBehaviour.Movement
     [RequireComponent(typeof(NavMeshAgent))]
     public class NavMeshAgentMovement : SteeringMovementBase
     {
-        public float MovementSpeed = 10;
-        public float Acceleration = 50;
-
         private NavMeshAgent NavMeshAgent;
-        private SteeringAgent Agent;
-
-        private Vector3 CurrentMovementSpeed;
-        private Vector3 CurrentOrienttion;
 
         private void Start()
         {
@@ -37,9 +30,9 @@ namespace Fyrvall.SteeringBehaviour.Movement
 
         public override void OrientAgent(Vector3 targetOrientationDirection)
         {
-            CurrentOrienttion = Vector3.Slerp(CurrentOrienttion, targetOrientationDirection, 0.1f);
-            if (CurrentOrienttion.sqrMagnitude > 0.1f) {
-                transform.rotation = Quaternion.LookRotation(CurrentOrienttion);
+            CurrentOriention = Vector3.RotateTowards(CurrentOriention, targetOrientationDirection, RotationSpeed * Time.fixedDeltaTime, 0f);
+            if (CurrentOriention.sqrMagnitude > 0.1f) {
+                transform.rotation = Quaternion.LookRotation(CurrentOriention);
             }
         }
     }

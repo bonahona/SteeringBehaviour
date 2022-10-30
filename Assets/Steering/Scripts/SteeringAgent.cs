@@ -82,26 +82,20 @@ namespace Fyrvall.SteeringBehaviour
 
         private void UpdateAgentValues()
         {
-            if (!UseAgent) {
+            if (!UseAgent || Behaviour == null) {
                 return;
             }
 
-            UpdateMovement();
-            UpdateOritation();
-        }
-
-        private void UpdateMovement()
-        {
             TargetMovementSpeed = GetMovementDirection();
 
-            if (TargetMovementSpeed.magnitude < (Behaviour?.ClampMovement ?? 0)) {
+            if (TargetMovementSpeed.magnitude < (Behaviour.ClampMovement)) {
                 TargetMovementSpeed = Vector3.zero;
             }
-        }
 
-        private void UpdateOritation()
-        {
-            TargetOrientation = GetOrientationDirection();          
+            var nextOrientation = GetOrientationDirection();
+            if (Vector3.Dot(TargetOrientation, nextOrientation) > Behaviour.ClampRotation) {
+                TargetOrientation = nextOrientation;
+            }
         }
 
         private Vector3 GetMovementDirection()
