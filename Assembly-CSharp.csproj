@@ -59,23 +59,23 @@
     <Compile Include="Assets\Steering\Scripts\MoveToTargetBehaviour.cs" />
     <Compile Include="Assets\Steering\Scripts\TeamType.cs" />
     <Compile Include="Assets\Steering\Scripts\ISteeringBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\Data\SteeringFrameData.cs" />
+    <Compile Include="Assets\Steering\Scripts\Data\SteeringData.cs" />
     <Compile Include="Assets\Steering\Scripts\SteeringUtils.cs" />
+    <Compile Include="Assets\Steering\Scripts\Movement\SteeringMovementBase.cs" />
     <Compile Include="Assets\Steering\Scripts\SteeringAgent.cs" />
     <Compile Include="Assets\TestController.cs" />
     <Compile Include="Assets\Misc\PeachColor.cs" />
     <Compile Include="Assets\Steering\Scripts\CircleTargetSteeringBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\Movement\RigidbodyMovement.cs" />
+    <Compile Include="Assets\Steering\Scripts\Movement\NavMeshAgentMovement.cs" />
     <Compile Include="Assets\Steering\Scripts\AvoidTeamsSteeringBehaviour.cs" />
     <Compile Include="Assets\Misc\PlayerCamera.cs" />
     <Compile Include="Assets\Steering\Scripts\NavMeshSteeringBehaviour.cs" />
+    <Compile Include="Assets\Steering\Scripts\SteeringAgentDebugger.cs" />
+    <Compile Include="Assets\Steering\Scripts\Data\NavMeshSteeringData.cs" />
     <Compile Include="Assets\Steering\Scripts\BehaviourContainer.cs" />
     <Compile Include="Assets\Steering\Scripts\MoveHomeSteeringBehaviour.cs" />
-    <Compile Include="Assets\Steering\Scripts\Data\NavMeshSteeringData.cs" />
-    <Compile Include="Assets\Steering\Scripts\Movement\SteeringMovementBase.cs" />
-    <Compile Include="Assets\Steering\Scripts\Movement\NavMeshAgentMovement.cs" />
-    <Compile Include="Assets\Steering\Scripts\Movement\RigidbodyMovement.cs" />
-    <Compile Include="Assets\Steering\Scripts\Data\SteeringFrameData.cs" />
-    <Compile Include="Assets\Steering\Scripts\Data\SteeringData.cs" />
-    <Compile Include="Assets\Steering\Scripts\SteeringAgentDebugger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

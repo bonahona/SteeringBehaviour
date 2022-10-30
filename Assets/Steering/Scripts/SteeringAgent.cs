@@ -15,6 +15,9 @@ namespace Fyrvall.SteeringBehaviour
         public SteeringAgent Target;
         public TeamType Team;
 
+        [Header("Debug")]
+        public bool DebugDraw = false;
+
         [HideInInspector]
         public Vector3 TargetMovementSpeed;
         [HideInInspector]
@@ -156,6 +159,25 @@ namespace Fyrvall.SteeringBehaviour
                 } else {
                     Debug.DrawLine(startPosition, startPosition + direction.Direction * Mathf.Abs(direction.MovementWeight), Color.red);
                 }
+            }
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            if (!Application.isPlaying) {
+                return;
+            }
+
+            if(Behaviour == null) {
+                return;
+            }
+
+            foreach (var behaviour in Behaviour.Behaviours) {
+                if (behaviour == null || !behaviour.Enabled) {
+                    continue;
+                }
+
+                behaviour.DebugDraw(this);
             }
         }
 

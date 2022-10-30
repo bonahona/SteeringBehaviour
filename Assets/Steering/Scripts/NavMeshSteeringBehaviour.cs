@@ -75,5 +75,30 @@ namespace Fyrvall.SteeringBehaviour
                 SteeringDataCache.OrientationFromDirection(delta.normalized, 0f, Priority);
             }
         }
+
+#if UNITY_EDITOR
+        public override void DebugDraw(SteeringAgent agent)
+        {
+            if(agent.Target == null) {
+                return;
+            }
+
+            UnityEditor.Handles.color = Color.red;
+            UnityEditor.Handles.DrawWireDisc(agent.Target.transform.position, Vector3.up, ClosestDistance, 2f);
+
+            UnityEditor.Handles.color = Color.green;
+            UnityEditor.Handles.DrawWireDisc(agent.Target.transform.position, Vector3.up, DesiredDistance, 2f);
+
+            if(!agent.NavMeshSteeringData.HasPath) {
+                return;
+            }
+
+            var corners = agent.NavMeshSteeringData.NavMeshPath.corners;
+            var distanceRemaining = agent.NavMeshSteeringData.GetTotalPathDistance(agent);
+            for(int i = 0; i < corners.Length -1; i ++) {
+                Debug.DrawLine(corners[i], corners[i + 1], Color.yellow);
+            }
+        }
+#endif
     }
 }

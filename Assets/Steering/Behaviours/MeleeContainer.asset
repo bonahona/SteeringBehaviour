@@ -72,7 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9fd7095fa563f04581865d8a62652db, type: 3}
   m_Name: MeleeContainer
   m_EditorClassIdentifier: 
-  ClampMovement: 0
+  ClampMovement: 0.25
+  ClampRotation: 0.1
   Behaviours:
   - {fileID: -8502182634300574336}
   - {fileID: -4009586880123875161}
