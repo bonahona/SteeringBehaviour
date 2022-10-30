@@ -75,11 +75,11 @@ namespace Fyrvall.SteeringBehaviour
                 return;
             } else if (totalDistance < DesiredDistance) {
                 var weight = totalDistance / (DesiredDistance - ClosestDistance);
-                SteeringDataCache.MovementFromDirection(delta.normalized, 0f, weight * Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, 0f, weight * Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, weight * Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, weight * Priority);
             } else {
-                SteeringDataCache.MovementFromDirection(delta.normalized, 0f, Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, 0f, Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, Priority);
             }
         }
 

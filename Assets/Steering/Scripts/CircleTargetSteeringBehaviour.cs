@@ -37,8 +37,8 @@ namespace Fyrvall.SteeringBehaviour
                 return SteeringDataCache;
             }
 
-            SteeringDataCache.MovementFromDirection(Directions[(byte)Direction] * delta.normalized, 0, Priority);
-            SteeringDataCache.OrientationFromDirection(Directions[(byte)Direction] * delta.normalized, 0, Priority);
+            SteeringDataCache.MovementFromDirection(Directions[(byte)Direction] * delta.normalized, Priority);
+            SteeringDataCache.OrientationFromDirection(Directions[(byte)Direction] * delta.normalized, Priority);
             return SteeringDataCache;
         }
     }

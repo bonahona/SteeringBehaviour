@@ -22,12 +22,12 @@ namespace Fyrvall.SteeringBehaviour
             var delta = (agent.StartPosition - agent.transform.position);
             var distance = delta.magnitude;
             if (distance > DesiredDistance) {
-                SteeringDataCache.MovementFromDirection(delta.normalized, 1f, Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, 1f, Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, Priority);
             } else {
                 var weight = distance / DesiredDistance;
-                SteeringDataCache.MovementFromDirection(delta.normalized, 1f, weight * Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, 1f, weight * Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, weight * Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, weight * Priority);
             }
 
             return SteeringDataCache;

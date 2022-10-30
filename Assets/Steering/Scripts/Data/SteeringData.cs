@@ -72,15 +72,10 @@ namespace Fyrvall.SteeringBehaviour.Data
             return Directions[resultIndex];
         }
 
-        public void MovementFromDirection(Vector3 fromDirection, float backwardbackwardsFactor = 1f, float weight = 1f)
+        public void MovementFromDirection(Vector3 fromDirection, float weight = 1f)
         {
             foreach(var direction in Directions) {
-                var dot = Vector3.Dot(direction.Direction, fromDirection);
-                if (dot < 0) {
-                    dot *= backwardbackwardsFactor;
-                }
-
-                direction.MovementWeight = dot * weight;
+                direction.MovementWeight = Vector3.Dot(direction.Direction, fromDirection) * weight;
             }
         }
 
@@ -100,15 +95,10 @@ namespace Fyrvall.SteeringBehaviour.Data
             }
         }
 
-        public void OrientationFromDirection(Vector3 fromDirection, float backwardbackwardsFactor = 1f, float weight = 1f)
+        public void OrientationFromDirection(Vector3 fromDirection, float weight = 1f)
         {
             foreach (var direction in Directions) {
-                var dot = Vector3.Dot(direction.Direction, fromDirection);
-                if (dot < 0) {
-                    dot *= backwardbackwardsFactor;
-                }
-
-                direction.OrientationWeight = dot * weight;
+                direction.OrientationWeight = Vector3.Dot(direction.Direction, fromDirection) * weight;
             }
         }
 

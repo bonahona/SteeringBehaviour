@@ -16,9 +16,6 @@ namespace Fyrvall.SteeringBehaviour
         [Range(0, 5f)]
         public float FromClosestDistancePriority = 1f;
 
-        [Range(0f, 1f)]
-        public float BackwardsFallof = 0f;
-
         public bool UseRaycast = true;
         public LayerMask GroundLayer;
 
@@ -41,15 +38,15 @@ namespace Fyrvall.SteeringBehaviour
 
             if (distance < ClosestDistance) {
                 var weight = 1f - distance / ClosestDistance;
-                SteeringDataCache.MovementFromDirection(-delta.normalized, BackwardsFallof, weight * Priority * FromClosestDistancePriority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority * FromClosestDistancePriority);
+                SteeringDataCache.MovementFromDirection(-delta.normalized, weight * Priority * FromClosestDistancePriority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, Priority * FromClosestDistancePriority);
             } else if (distance < DesiredDistance) {
                 var weight = (distance - ClosestDistance) / (DesiredDistance - ClosestDistance);
-                SteeringDataCache.MovementFromDirection(delta.normalized, BackwardsFallof, weight * Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, weight * Priority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, Priority);
             } else if(distance < FarthestDistance){
-                SteeringDataCache.MovementFromDirection(delta.normalized, BackwardsFallof, Priority * ToDesiredDistancePriority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, BackwardsFallof, Priority * ToDesiredDistancePriority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, Priority * ToDesiredDistancePriority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, Priority * ToDesiredDistancePriority);
             } 
 
             return SteeringDataCache;
