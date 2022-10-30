@@ -50,12 +50,6 @@ namespace Fyrvall.SteeringBehaviour
 
         private void Repath(SteeringAgent agent)
         {
-            var distanceToTarget = agent.Target.transform.position - agent.transform.position;
-            if(distanceToTarget.sqrMagnitude < ClosestDistanceSqr) {
-                agent.NavMeshSteeringData.SetRepathTimer(RepathTimer);
-                return;
-            }
-
             agent.NavMeshSteeringData.Repath(agent.transform.position, agent.Target.transform.position);
             agent.NavMeshSteeringData.SetRepathTimer(RepathTimer);
         }
@@ -69,12 +63,12 @@ namespace Fyrvall.SteeringBehaviour
                 agent.NavMeshSteeringData.NextNavMeshPathIndex++;
             }
 
-            var totalDistance = agent.NavMeshSteeringData.GetTotalPathDistanceLeft(agent);
+            var distanceLeft = agent.NavMeshSteeringData.GetTotalPathDistanceLeft(agent);
 
-            if(totalDistance < ClosestDistance) {
+            if(distanceLeft < ClosestDistance) {
                 return;
-            } else if (totalDistance < DesiredDistance) {
-                var weight = totalDistance / (DesiredDistance - ClosestDistance);
+            } else if (distanceLeft < DesiredDistance) {
+                var weight = (distanceLeft - ClosestDistance) / (DesiredDistance - ClosestDistance);
                 SteeringDataCache.MovementFromDirection(delta.normalized, weight * Priority);
                 SteeringDataCache.OrientationFromDirection(delta.normalized, weight * Priority);
             } else {
