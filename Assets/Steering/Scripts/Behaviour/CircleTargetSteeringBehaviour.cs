@@ -19,9 +19,6 @@ namespace Fyrvall.SteeringBehaviour
 
         public float DesiredDistance = 1f;
 
-        [Range(0f, 5f)]
-        public float Priority = 1f;
-
         public DirectionType Direction = DirectionType.Left;
 
         public override SteeringData UpdateBehaviour(SteeringAgent agent, float deltaTime)
@@ -37,8 +34,8 @@ namespace Fyrvall.SteeringBehaviour
                 return SteeringDataCache;
             }
 
-            SteeringDataCache.MovementFromDirection(Directions[(byte)Direction] * delta.normalized, Priority);
-            SteeringDataCache.OrientationFromDirection(Directions[(byte)Direction] * delta.normalized, Priority);
+            SteeringDataCache.MovementFromDirection(Directions[(byte)Direction] * delta.normalized, MovementPriority);
+            SteeringDataCache.OrientationFromDirection(Directions[(byte)Direction] * delta.normalized, OrientationPriority);
             return SteeringDataCache;
         }
     }

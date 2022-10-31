@@ -10,6 +10,12 @@ namespace Fyrvall.SteeringBehaviour
 
         public bool Enabled = true;
 
+        [Range(0f, 5f)]
+        public float MovementPriority = 1f;
+
+        [Range(0f, 5f)]
+        public float OrientationPriority = 1f;
+
         [HideInInspector]
         public int Index;
 

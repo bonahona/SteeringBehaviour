@@ -10,7 +10,6 @@ namespace Fyrvall.SteeringBehaviour
         public float DesiredDistance = 10f;
         public float RepathTimer = 1f;
         public float FinishDistance = 0.1f;
-        public float Priority = 1f;
 
         private float ClosestDistanceSqr;
         private float FinishDistanceSqr;
@@ -69,11 +68,11 @@ namespace Fyrvall.SteeringBehaviour
                 return;
             } else if (distanceLeft < DesiredDistance) {
                 var weight = (distanceLeft - ClosestDistance) / (DesiredDistance - ClosestDistance);
-                SteeringDataCache.MovementFromDirection(delta.normalized, weight * Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, weight * Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, weight * MovementPriority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, weight * MovementPriority);
             } else {
-                SteeringDataCache.MovementFromDirection(delta.normalized, Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, MovementPriority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, MovementPriority);
             }
         }
 

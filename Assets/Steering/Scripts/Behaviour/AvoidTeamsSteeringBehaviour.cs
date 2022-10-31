@@ -8,9 +8,6 @@ namespace Fyrvall.SteeringBehaviour
     {
         public float DesiredDistance = 1f;
 
-        [Range(0f, 5f)]
-        public float Priority = 1f;
-
         private float DesiredDistanceSquare;
 
         public override void StartBehaviour(SteeringAgent agent)
@@ -32,8 +29,8 @@ namespace Fyrvall.SteeringBehaviour
 
                 var distance = delta.magnitude;
                 var weight = 1f - (distance / DesiredDistance);
-                WorkCache.MovementFromDirection(-delta.normalized, weight * Priority);
-                WorkCache.OrientationFromDirection(-delta.normalized, weight * Priority);
+                WorkCache.MovementFromDirection(-delta.normalized, weight * MovementPriority);
+                WorkCache.OrientationFromDirection(-delta.normalized, weight * OrientationPriority);
                 SteeringDataCache.Apply(WorkCache);
             }
 

@@ -9,9 +9,6 @@ namespace Fyrvall.SteeringBehaviour
         [Range(0f, 10f)]
         public float DesiredDistance = 1f;
 
-        [Range(0f, 5f)]
-        public float Priority = 1f;
-
         public override SteeringData UpdateBehaviour(SteeringAgent agent, float deltaTime)
         {
             SteeringDataCache.Reset();
@@ -22,12 +19,12 @@ namespace Fyrvall.SteeringBehaviour
             var delta = (agent.StartPosition - agent.transform.position);
             var distance = delta.magnitude;
             if (distance > DesiredDistance) {
-                SteeringDataCache.MovementFromDirection(delta.normalized, Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, MovementPriority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, OrientationPriority);
             } else {
                 var weight = distance / DesiredDistance;
-                SteeringDataCache.MovementFromDirection(delta.normalized, weight * Priority);
-                SteeringDataCache.OrientationFromDirection(delta.normalized, weight * Priority);
+                SteeringDataCache.MovementFromDirection(delta.normalized, weight * MovementPriority);
+                SteeringDataCache.OrientationFromDirection(delta.normalized, weight * OrientationPriority);
             }
 
             return SteeringDataCache;
