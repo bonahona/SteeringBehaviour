@@ -12,6 +12,8 @@ namespace Fyrvall.SteeringBehaviour
         public bool UseAgent = true;        // Reserved for players
 
         public BehaviourContainer Behaviour;
+        public TargetProvider TargetProvider;
+
         public SteeringAgent Target;
         public TeamType Team;
 
@@ -64,6 +66,13 @@ namespace Fyrvall.SteeringBehaviour
 
                 behaviour.StartBehaviour(this);
             }
+
+            Target = GetTarget();
+        }
+
+        private SteeringAgent GetTarget()
+        {
+            return TargetProvider?.GetTarget(this);
         }
 
         public void UpdateAgent(float deltaTime)

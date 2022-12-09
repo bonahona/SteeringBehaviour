@@ -26,7 +26,7 @@ namespace Fyrvall.SteeringBehaviour.Movement
         public override void MoveAgent(Vector3 targetMovementDirection)
         {
             CurrentMovementSpeed = Vector3.MoveTowards(CurrentMovementSpeed, targetMovementDirection * MovementSpeed, Acceleration * Time.deltaTime);
-            NavMeshAgent.Move(CurrentMovementSpeed * Time.fixedDeltaTime);
+            NavMeshAgent.Move(CurrentMovementSpeed * Time.deltaTime);
         }
 
         public override void OrientAgent(Vector3 targetOrientationDirection)

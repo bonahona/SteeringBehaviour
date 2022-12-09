@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: NavMeshSteeringBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  MovementPriority: 3
+  OrientationPriority: 1
   Index: 0
   ClosestDistance: 3
   DesiredDistance: 6
   RepathTimer: 1
   FinishDistance: 1
-  Priority: 2
 --- !u!114 &-6031476595039695585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,9 +33,10 @@ MonoBehaviour:
   m_Name: AvoidTeamsSteeringBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  MovementPriority: 1
+  OrientationPriority: 2
   Index: 2
   DesiredDistance: 5
-  Priority: 2
 --- !u!114 &-4009586880123875161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,6 +50,8 @@ MonoBehaviour:
   m_Name: MoveToTargetBehaviour
   m_EditorClassIdentifier: 
   Enabled: 1
+  MovementPriority: 2
+  OrientationPriority: 3
   Index: 1
   ClosestDistance: 4
   DesiredDistance: 10
@@ -58,7 +62,6 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  Priority: 3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -74,6 +74,8 @@
     <Compile Include="Assets\Steering\Scripts\Data\NavMeshSteeringData.cs" />
     <Compile Include="Assets\Steering\Scripts\BehaviourContainer.cs" />
     <Compile Include="Assets\Steering\Scripts\Behaviour\MoveHomeSteeringBehaviour.cs" />
+    <Compile Include="Assets\Misc\UnitSpawner.cs" />
+    <Compile Include="Assets\Steering\Scripts\TargetProviders\TargetProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

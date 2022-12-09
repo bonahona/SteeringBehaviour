@@ -20,13 +20,17 @@ namespace Fyrvall.SteeringBehaviour.Movement
 
         private void FixedUpdate()
         {
+            if (Agent == null) {
+                return;
+            }
+
             Agent.UpdateAgent(Time.fixedDeltaTime);
         }
 
         public override void MoveAgent(Vector3 targetMovementDirection)
         {
             CurrentMovementSpeed = Vector3.MoveTowards(CurrentMovementSpeed, targetMovementDirection * MovementSpeed, Acceleration * Time.fixedDeltaTime);
-            Rigidbody.MovePosition(transform.position + CurrentMovementSpeed * Time.fixedDeltaTime);
+            Rigidbody.AddForce(CurrentMovementSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
         }
 
         public override void OrientAgent(Vector3 targetOrientationDirection)
